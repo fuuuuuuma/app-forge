@@ -1,0 +1,8 @@
+{
+  "name": "app-forge",
+  "version": "0.1.0",
+  "description": "Web・モバイル・Chrome拡張の開発とストア公開準備を支援する日本語スキル",
+  "author": {"name": "fuuuuuuma"},
+  "license": "MIT",
+  "keywords": ["app", "web", "mobile", "extension", "japanese"]
+}

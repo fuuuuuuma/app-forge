@@ -1,0 +1,2 @@
+codex plugin marketplace add fuuuuuuma/app-forge
+codex plugin add app-forge@app-forge

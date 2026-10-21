@@ -1,0 +1,6 @@
+{
+  "name": "app-forge",
+  "owner": {"name": "fuuuuuuma"},
+  "metadata": {"description": "アプリ開発のすゝめ。100個の制作アイデアから開発・公開準備まで"},
+  "plugins": [{"name": "app-forge", "source": "./plugins/app-forge", "description": "Web・モバイル・Chrome拡張を、企画や参考アプリから動く形へ。App Store・Google Play申請も支援。", "version": "0.1.0", "category": "development"}]
+}

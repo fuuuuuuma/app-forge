@@ -1,0 +1,11 @@
+{
+  "name": "@fuuuuuuma/app-forge",
+  "version": "0.1.0",
+  "description": "100個の制作アイデアからWeb・モバイル・Chrome拡張を作り始める開発スキル",
+  "type": "module",
+  "license": "MIT",
+  "engines": {"node": ">=20"},
+  "bin": {"app-forge": "scripts/start.mjs"},
+  "files": ["scripts/start.mjs", "lib", "catalog", "plugins", "README.md", "LICENSE"],
+  "scripts": {"build": "node scripts/build.mjs", "test": "node --test tests/*.test.mjs", "dev": "python3 -m http.server 5178 --bind 127.0.0.1 --directory dist"}
+}

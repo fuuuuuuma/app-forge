@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>アプリ開発のすゝめ — App Forge 100</title>
+  <meta name="description" content="その欲しい、自分でつくろう。100個の制作アイデアと無料の開発スキル。Web、モバイル、Chrome拡張の開発から公開準備まで。">
+  <meta name="theme-color" content="#f4f2e9"><link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css"><script type="module" src="./app.js"></script>
+</head>
+<body>
+<a class="skip" href="#ideas">制作アイデアへ</a>
+<header class="header wrap">
+  <a class="brand" href="./" aria-label="App Forge ホーム"><span class="mark" aria-hidden="true">a<span>f</span></span><span>アプリ開発のすゝめ<small>APP FORGE / 100 IDEAS TO BUILD</small></span></a>
+  <nav aria-label="メイン"><a href="#ideas">100選</a><a href="#how">はじめ方</a><a href="#release">公開まで</a><a class="nav-github" href="https://github.com/fuuuuuuma/app-forge" target="_blank" rel="noopener">GitHub ↗</a></nav>
+</header>
+<main>
+<section class="hero wrap">
+  <div class="hero-copy"><p class="eyebrow"><span class="live-dot"></span> アイデアから、動くアプリへ。</p>
+  <h1>その「欲しい」、<br><span>自分でつくろう。</span></h1>
+  <p class="lead">自分だけの道具も、誰かのためのサービスも。<br>100個のアイデアと開発スキルで、<br class="mobile-break">はじめの一歩から公開まで。</p>
+  <div class="hero-actions"><a class="button primary" href="#ideas">作りたいアプリを探す <span>↓</span></a><a class="text-link" href="#install">無料スキルを入れる ↗</a></div>
+  <p class="hero-note">Web / iOS・Android / Chrome拡張 <span>·</span> Codex・Claude Code対応</p></div>
+  <div class="hero-art" aria-label="制作アイデアのイメージ。完成アプリの画面ではありません。" role="img">
+    <span class="art-tag">SMALL IDEA. REAL APP.</span>
+    <div class="mock-window"><div class="window-bar"><i></i><i></i><i></i><span>my-ideas.app</span></div><div class="mock-body"><span class="mini-label">MY WORKSPACE</span><strong>つくるを、日常に。</strong><div class="mock-line"></div><div class="mock-chart"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="mock-bottom"><span>今週の記録</span><span>＋ 新しくつくる</span></div></div></div>
+    <div class="mock-phone"><div class="phone-dot"></div><span class="mini-label">今日のひとこと</span><strong>你好！</strong><p>小さな練習を、<br>毎日の習慣に。</p><div class="vocab">你好 <span>nǐ hǎo</span> <b>▷</b></div><div class="phone-button">会話をはじめる →</div></div>
+    <span class="sticker">BUILD<br>YOUR OWN.<span>↗</span></span><span class="art-caption">画面は制作イメージです</span>
+  </div>
+</section>
+<div class="strip"><div class="wrap strip-inner"><span><b>100</b> 制作アイデア</span><span><b>3</b> つの開発ルート</span><span><b>2</b> 行でスキル導入</span><span>企画 <i>→</i> 開発 <i>→</i> 公開準備</span></div></div>
+<section id="ideas" class="wrap section ideas-section" aria-labelledby="ideas-title">
+  <div class="section-top"><div><p class="eyebrow">FIND YOUR NEXT PROJECT</p><h2 id="ideas-title">何を、つくってみる？<span>100</span></h2><p class="section-intro">まずは気になるものをひとつ。あなたの使い方に変えていこう。</p></div><button id="random" class="button light">おまかせで選ぶ ↗</button></div>
+  <div class="filter-box"><div class="search-wrap"><span aria-hidden="true">⌕</span><label class="sr-only" for="search">アイデアを検索</label><input id="search" type="search" placeholder="例：動画、学習、習慣、仕事…" autocomplete="off"><kbd>/</kbd></div><label class="platform-label"><span class="sr-only">開発する種類</span><select id="platform"><option value="all">すべての種類</option value="web">Webアプリ</option><option value="mobile">モバイル</option><option value="extension">Chrome拡張</option></select></label><button id="favorites" class="favorite-filter" aria-pressed="false">♡ 気になる</button></div>
+  <div id="categories" class="categories" role="group" aria-label="カテゴリ"></div>
+  <div class="result-row"><p id="result-count" aria-live="polite">100個のアイデア</p><span>実例からの着想 ＋ オリジナルの制作案</span></div>
+  <div id="idea-grid" class="idea-grid"><!--IDEA_CARDS--></div>
+  <div id="empty" class="empty" hidden><h3>ぴったりの案は、これから。</h3><p>キーワードや絞り込みを変えて探してみてください。</p><button class="button light" id="reset">絞り込みをリセット</button></div>
+  <p class="catalog-note">100選は制作のきっかけとなるアイデア集です。100個の完成アプリ・成功実績ではありません。</p>
+</section>
+<section class="case-section"><div class="wrap section"><p class="eyebrow">LESSONS FROM REAL PROJECTS</p><h2>つくって学んだことも、<br>スキルに詰めました。</h2><div class="case-grid"><article><span>01 / VIDEO EDITOR</span><h3>KIRUから学ぶ</h3><p>プレビューと重い処理の役割分担。長い動画でも使える道具にするための考え方。</p></article><article><span>02 / REVIEW WORKSPACE</span><h3>MIRUから学ぶ</h3><p>動画と指摘をつなぐ設計。招待・権限・ファイル容量まで含めて、共有を考える。</p></article><article><span>03 / CHROME EXTENSION</span><h3>拡張機能から学ぶ</h3><p>いつものページに小さな便利を。最小限の権限と、確認して送る外部サービス連携。</p></article></div><p class="small-muted">設計判断を抽象化して収録。本体コード・個人素材・非公開データは含みません。</p></div></section>
+<section id="how" class="wrap section"><p class="eyebrow">FROM IDEA TO YOUR FIRST APP</p><h2>選んだら、もう制作の入口。</h2><div class="steps"><article><span>01</span><h3>アイデアを選ぶ</h3><p>最初の3機能と、完成の確かめ方を見て、つくるものを決めます。</p></article><article><span>02</span><h3>起動コマンドを実行</h3><p>カードを開いてコマンドをコピー。新しいフォルダと指示書を用意し、手元のAIを起動します。</p></article><article><span>03</span><h3>動かして、育てる</h3><p>AIと実装・起動・動作確認。公開したくなったら、ストア申請の準備まで。</p></article></div><p class="small-muted">起動にはNode.js 20以上・npm・GitとCodexまたはClaude CodeのCLI・ログインが必要です。利用プランに応じたAIの利用料がかかる場合があります。</p></section>
+<section id="install" class="install-section"><div class="wrap section install-grid"><div><p class="eyebrow">TAKE THE SKILL WITH YOU</p><h2>いつものAIに、<br>開発の道しるべを。</h2><p>100選からでも、あなた自身のアイデアからでも。<br>スキル自体は無料・オープンソースです。</p></div><div class="install-panel"><div class="tabs" role="tablist" aria-label="導入先"><button role="tab" id="install-codex" aria-selected="true" aria-controls="install-code" data-install-agent="codex">Codex</button><button role="tab" id="install-claude" aria-selected="false" aria-controls="install-code" data-install-agent="claude" tabindex="-1">Claude Code</button></div><div id="install-code" role="tabpanel" aria-labelledby="install-codex"><pre><code id="install-command">codex plugin marketplace add fuuuuuuma/app-forge
+codex plugin add app-forge@app-forge</code></pre><button id="copy-install" class="button code-copy">2行をコピー ↗</button></div><p>ターミナルで実行 → 新しいチャットで<br><code id="invoke">$app-forge</code> と、作りたいものを伝えてください。</p></div></div></section>
+<section id="release" class="wrap section"><p class="eyebrow">BUILD IT. SHARE IT.</p><div class="section-top"><div><h2>公開まで、見通せる。</h2><p class="section-intro">URLで届けるか、ストアで届けるか。目的に合わせて選ぼう。</p></div></div><div class="release-grid"><article><span class="route-icon">↗</span><h3>Webで届ける</h3><p>まずはURLで試してもらう。SitesやCloudflareを候補に、認証・保存・費用を整理します。</p><a href="https://github.com/fuuuuuuma/app-forge/blob/main/plugins/app-forge/skills/app-forge/references/platforms.md" target="_blank" rel="noopener">配布方法を読む ↗</a></article><article><span class="route-icon">▣</span><h3>App Store / Google Play</h3><p>実機テストから署名ビルド、テスト配信、説明文・プライバシー資料、審査提出の支援まで。</p><a href="https://github.com/fuuuuuuma/app-forge/blob/main/plugins/app-forge/skills/app-forge/references/store-release.md" target="_blank" rel="noopener">ストア公開ガイド ↗</a></article><article><span class="route-icon">＋</span><h3>Chrome Web Store</h3><p>最小権限の設計からZIPの準備、掲載情報、収集データの説明と審査提出へ。</p><a href="https://developer.chrome.com/docs/webstore/publish" target="_blank" rel="noopener">公式の公開手順 ↗</a></article></div><p class="small-muted">開発者登録・本人確認・契約は本人が行います。ストアやクラウドの費用は別途。提出条件は公式資料で再確認し、審査合格は保証しません。</p><div class="server-note"><span>FOR BUILDERS</span><p>自分のサービスからCodexを動かしたいなら、<a href="https://developers.openai.com/codex/app-server/" target="_blank" rel="noopener">Codex App Server</a>も選択肢。開発エージェントをつなぐ仕組みとして紹介しています。</p></div></section>
+<section class="wrap source-section"><details><summary>参考にしたナレッジと、確認した範囲 <span>＋</span></summary><p>指定のX投稿はFxTwitter経由で公開本文を確認。動画付き「THE FIRST PROMPT」は2秒間隔の16フレームで字幕表示を観察し、機能・状態・認証・AI・検証を具体化する着想を採用しました。音声全体と実行結果は未検証です。外部アプリの内部実装や性能は検証していません。</p><div class="source-links"><a href="https://x.com/usutaku_channel/status/2111464216599429238" target="_blank" rel="noopener">THE FIRST PROMPT ↗</a><a href="https://x.com/usutaku_channel/status/2112106482493772057" target="_blank" rel="noopener">UIの指示語 ↗</a><a href="https://github.com/typesafe-ai/skills" target="_blank" rel="noopener">TypeSafe公式スキル ↗</a><a href="https://x.com/Shin_Engineer/status/2052307447881089505" target="_blank" rel="noopener">サブスクBox ↗</a><a href="https://x.com/gdvonly/status/2112824259592491073" target="_blank" rel="noopener">中国語学習アプリ ↗</a></div></details></section>
+</main>
+<footer class="wrap footer"><a class="brand" href="./"><span class="mark" aria-hidden="true">a<span>f</span></span><span>小さなアイデアを、使えるかたちに。</span></a><p>APP FORGE / 河村風真 · MIT License · 2026</p><a href="https://github.com/fuuuuuuma/app-forge" target="_blank" rel="noopener">ソースを見る ↗</a></footer>
+<dialog id="idea-dialog" aria-labelledby="detail-title"><div class="dialog-bar"><span id="detail-number"></span><button id="close-dialog" aria-label="詳細を閉じる">✕</button></div><div id="detail-content"></div><div class="launch-section"><p class="eyebrow">LET’S MAKE IT YOURS</p><h3>このアイデアで、開発を始めよう。</h3><p>コマンドを手元のターミナルで実行すると、新しいフォルダ・指示書・スキルを用意し、選んだAIを起動します。</p><div class="agent-options" role="group" aria-label="開発に使うAI"><button data-agent="codex" aria-pressed="true">Codex</button><button data-agent="claude" aria-pressed="false">Claude Code</button></div><div class="launch-code"><code id="launch-command"></code><button id="copy-launch" aria-label="起動コマンドをコピー">コピー ↗</button></div><p class="prerequisites">必要なもの：Node.js 20以上・npm・Git、選んだAIのCLI・ログイン。既存フォルダは上書きしません。AIの利用料はプランに従います。</p><div class="detail-actions"><button id="download-brief" class="button light">指示書をダウンロード ↓</button><button id="copy-prompt" class="text-link">チャット用の指示をコピー ↗</button><button id="copy-link" class="text-link">この案を共有 ↗</button></div><p class="small-muted">CLIを使わない場合は、無料スキルを導入してからチャット用の指示を貼り付けてください。Webページだけで手元のPCの開発を自動実行することはありません。</p></div></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+</body></html>

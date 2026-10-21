@@ -1,0 +1,2607 @@
+[
+  {
+    "id": "001",
+    "slug": "browser-video-workbench",
+    "title": "ブラウザ動画ワークベンチ",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "じっくり",
+    "summary": "手元の動画を読み込み、必要な区間を選んで編集内容を保存する制作アイデア。",
+    "audience": "トーク動画を編集する人",
+    "features": [
+      "ローカル動画の読み込みと再生",
+      "開始・終了点による区間の選択",
+      "編集内容をJSONで保存・再読込"
+    ],
+    "acceptance": [
+      "元動画を変更せず指定区間を再生できる",
+      "保存後の再読込で区間と順序が一致する",
+      "大きな動画で失敗しても理由と復旧方法が出る"
+    ],
+    "data": [
+      "Project",
+      "MediaAsset",
+      "TimelineClip"
+    ],
+    "caution": "最初はMP4書き出しを分け、対応形式・メモリ上限を実測する。",
+    "inspiration": "https://kiru.pinpon-fuuma.workers.dev"
+  },
+  {
+    "id": "002",
+    "slug": "video-review-room",
+    "title": "動画レビューの部屋",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "じっくり",
+    "summary": "動画の時刻にコメントを付け、修正版と照らし合わせる制作アイデア。",
+    "audience": "制作者と確認担当者",
+    "features": [
+      "招待した相手だけが入れるレビュー画面",
+      "再生位置にひも付くコメント",
+      "修正版ごとの指摘の確認状態"
+    ],
+    "acceptance": [
+      "時刻付きコメントから該当箇所へ移動できる",
+      "見るだけの人はコメントや招待を変更できない",
+      "別プロジェクトの動画URLを指定しても閲覧できない"
+    ],
+    "data": [
+      "ReviewProject",
+      "VideoVersion",
+      "Comment",
+      "Membership"
+    ],
+    "caution": "保存容量と転送量を見積もり、動画の公開URLだけで権限を代用しない。",
+    "inspiration": "https://miru.pinpon-fuuma.workers.dev"
+  },
+  {
+    "id": "003",
+    "slug": "reference-clipper",
+    "title": "資料クリップ拡張",
+    "category": "整理・発見",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "XやYouTubeで見つけた参考資料を、確認してから自分の一覧へ保存する制作アイデア。",
+    "audience": "調べ物をする発信者",
+    "features": [
+      "明示ボタンによるURLとタイトルの取得",
+      "保存前のメモ・タグ編集",
+      "同じURLの二重保存防止"
+    ],
+    "acceptance": [
+      "専用ボタンを押すまでページ内容を送信しない",
+      "追跡用パラメータが違う同じURLを重複として扱う",
+      "対象外サイトでは取得処理を動かさない"
+    ],
+    "data": [
+      "Reference",
+      "Tag",
+      "Destination"
+    ],
+    "caution": "接続先はモックから始め、必要なサイトだけに権限を絞る。"
+  },
+  {
+    "id": "004",
+    "slug": "subscription-calendar",
+    "title": "サブスクの更新カレンダー",
+    "category": "暮らし・習慣",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "契約中のサービスと次回更新日を一つのカレンダーに整理する制作アイデア。",
+    "audience": "複数のサブスクを使う人",
+    "features": [
+      "金額・通貨・更新周期の手入力",
+      "更新日のカレンダー表示",
+      "指定日前の端末通知"
+    ],
+    "acceptance": [
+      "月末開始の契約でも次回日が不正な日付にならない",
+      "通貨の違う金額を無断で合計しない",
+      "通知を拒否しても一覧と編集を利用できる"
+    ],
+    "data": [
+      "Subscription",
+      "BillingCycle",
+      "Reminder"
+    ],
+    "caution": "口座連携や解約代行を前提にせず、金額は利用者の記録として扱う。",
+    "inspiration": "https://x.com/Shin_Engineer/status/2052307447881089505"
+  },
+  {
+    "id": "005",
+    "slug": "personal-chinese-coach",
+    "title": "自分専用の中国語練習帳",
+    "category": "学び・言葉",
+    "platform": "mobile",
+    "level": "じっくり",
+    "summary": "自分が使いたかった表現を添削ノートと会話練習に育てる制作アイデア。",
+    "audience": "仕事で中国語を使う学習者",
+    "features": [
+      "入力文の添削と理由の表示",
+      "気になる語彙を単語帳へ登録",
+      "保存語彙を使った練習会話"
+    ],
+    "acceptance": [
+      "添削結果の原文と修正文を比較できる",
+      "登録した語彙を練習に指定できる",
+      "AI接続が失敗しても原文と学習記録を失わない"
+    ],
+    "data": [
+      "PracticeText",
+      "Vocabulary",
+      "Conversation"
+    ],
+    "caution": "会話やスクリーンショットは匿名化し、最初は模擬AI応答で流れを検証する。",
+    "inspiration": "https://x.com/gdvonly/status/2112824259592491073"
+  },
+  {
+    "id": "006",
+    "slug": "chapter-marker",
+    "title": "動画チャプター下書き",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "動画を見ながら章の時刻と見出しを並べる制作アイデア。",
+    "audience": "長尺動画の投稿者",
+    "features": [
+      "再生中の時刻を章として追加",
+      "章見出しの並べ替えと編集",
+      "説明欄用テキストの書き出し"
+    ],
+    "acceptance": [
+      "分をまたぐ時刻が正しく表記される",
+      "同時刻や逆順の章を保存前に知らせる",
+      "書き出し後も元の編集データを残せる"
+    ],
+    "data": [
+      "VideoReference",
+      "Chapter"
+    ],
+    "caution": "動画本体を無断取得せず、手元動画または利用可能な埋め込みで始める。"
+  },
+  {
+    "id": "007",
+    "slug": "thumbnail-compare",
+    "title": "サムネ比較ボード",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "複数のサムネ案を実際に近い小ささで見比べる制作アイデア。",
+    "audience": "動画の見せ方を検討する人",
+    "features": [
+      "画像のドラッグ追加",
+      "スマホサイズの一覧プレビュー",
+      "比較メモと候補の保存"
+    ],
+    "acceptance": [
+      "縦横比の違う画像でも表示が崩れない",
+      "選択した候補が再読込後も残る",
+      "画像を追加しても外部へ自動送信されない"
+    ],
+    "data": [
+      "ThumbnailCandidate",
+      "ComparisonNote"
+    ],
+    "caution": "クリック率の予測や改善保証を表示せず、目視比較の道具にする。"
+  },
+  {
+    "id": "008",
+    "slug": "shoot-checklist",
+    "title": "撮影準備ポケット",
+    "category": "動画・発信",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "機材とシーンの準備を撮影場所で確認する制作アイデア。",
+    "audience": "一人で撮影する人",
+    "features": [
+      "撮影別チェックリストの作成",
+      "機材セットの再利用",
+      "未確認項目だけを表示"
+    ],
+    "acceptance": [
+      "元テンプレートを変更せず複製できる",
+      "画面を閉じても確認状況が残る",
+      "オフラインでも保存済み一覧を開ける"
+    ],
+    "data": [
+      "Shoot",
+      "ChecklistItem",
+      "EquipmentSet"
+    ],
+    "caution": "端末内保存の消失に備え、JSONバックアップを用意する。"
+  },
+  {
+    "id": "009",
+    "slug": "caption-proof-board",
+    "title": "字幕の校正ボード",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "SRT字幕を時刻と一緒に読み、表記ゆれを直す制作アイデア。",
+    "audience": "動画の字幕を確認する人",
+    "features": [
+      "SRTの読み込みと行一覧",
+      "用語辞書による候補表示",
+      "変更前後を確認してSRT出力"
+    ],
+    "acceptance": [
+      "修正しても変更対象外の時刻を保つ",
+      "改行・日本語・絵文字を読み書きできる",
+      "不正な時刻は行番号付きで説明される"
+    ],
+    "data": [
+      "Caption",
+      "GlossaryEntry",
+      "Revision"
+    ],
+    "caution": "辞書候補の一括適用は確認を挟み、文脈を無視した自動置換を避ける。"
+  },
+  {
+    "id": "010",
+    "slug": "creator-asset-license",
+    "title": "素材の利用条件ノート",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "使う素材の出典と確認した利用条件を案件にひも付ける制作アイデア。",
+    "audience": "画像や音源を扱う制作者",
+    "features": [
+      "素材URLと取得日の記録",
+      "案件ごとの使用素材一覧",
+      "クレジット表記の書き出し"
+    ],
+    "acceptance": [
+      "一つの素材を複数案件へ関連付けられる",
+      "出典未入力の素材が分かる",
+      "書き出した一覧から元のURLへ移動できる"
+    ],
+    "data": [
+      "AssetRecord",
+      "LicenseMemo",
+      "Production"
+    ],
+    "caution": "利用可否を自動断定せず、利用者が確認した原文URLと日付を残す。"
+  },
+  {
+    "id": "011",
+    "slug": "podcast-queue",
+    "title": "ポッドキャスト収録ノート",
+    "category": "動画・発信",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "話題と収録中の気付きをエピソード単位で整理する制作アイデア。",
+    "audience": "音声番組を作る人",
+    "features": [
+      "話題カードの並べ替え",
+      "収録中の時刻メモ",
+      "概要欄用メモの出力"
+    ],
+    "acceptance": [
+      "録音を停止しても時刻メモが保持される",
+      "話題を移動してもメモの関連が変わらない",
+      "出力前に公開しないメモを除外できる"
+    ],
+    "data": [
+      "Episode",
+      "TopicCard",
+      "RecordingMarker"
+    ],
+    "caution": "録音機能を付ける場合は参加者の同意とマイク権限を別に設計する。"
+  },
+  {
+    "id": "012",
+    "slug": "browser-reading-highlighter",
+    "title": "読むためのマーカー",
+    "category": "学び・言葉",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "読んでいるページの気になる箇所に、自分用の短いメモを付ける制作アイデア。",
+    "audience": "Web記事で学ぶ人",
+    "features": [
+      "選択文へのローカルマーカー",
+      "ページごとのメモ一覧",
+      "引用と出典URLの書き出し"
+    ],
+    "acceptance": [
+      "選択操作なしにページ全文を保存しない",
+      "再訪時に一致する箇所だけを復元する",
+      "元の本文が変わると位置不明を伝える"
+    ],
+    "data": [
+      "Highlight",
+      "PageReference",
+      "StudyNote"
+    ],
+    "caution": "ログインページや個人情報を初期対象にせず、引用の利用範囲も利用者が確認する。"
+  },
+  {
+    "id": "013",
+    "slug": "spaced-vocabulary",
+    "title": "忘れた頃の単語カード",
+    "category": "学び・言葉",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "覚えたい語句を、理解度に応じて出題する制作アイデア。",
+    "audience": "語彙を増やしたい人",
+    "features": [
+      "語句・意味・例文の登録",
+      "理解度に応じた復習日設定",
+      "今日の復習カード"
+    ],
+    "acceptance": [
+      "日付をまたいでも未復習カードが残る",
+      "同じ回答履歴から同じ復習予定を作れる",
+      "間違った語句を編集しても履歴を追える"
+    ],
+    "data": [
+      "Flashcard",
+      "ReviewEvent",
+      "ReviewSchedule"
+    ],
+    "caution": "特定の学習効果を保証せず、復習間隔のルールを利用者に見せる。"
+  },
+  {
+    "id": "014",
+    "slug": "reading-map",
+    "title": "読書のつながりマップ",
+    "category": "学び・言葉",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "本で得た考えをテーマで結び、あとから思い出す制作アイデア。",
+    "audience": "読書メモを活かしたい人",
+    "features": [
+      "本と自分の要約の登録",
+      "テーマ間の関連付け",
+      "テーマからメモを横断表示"
+    ],
+    "acceptance": [
+      "同じ本を別テーマから参照できる",
+      "関連を外しても元メモを失わない",
+      "大量のメモでも検索結果を絞れる"
+    ],
+    "data": [
+      "Book",
+      "ReadingNote",
+      "ConceptLink"
+    ],
+    "caution": "書籍本文の大量転載を避け、自分の要約と必要な出典情報を記録する。"
+  },
+  {
+    "id": "015",
+    "slug": "pronunciation-replay",
+    "title": "発音くらべノート",
+    "category": "学び・言葉",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "お手本と自分の録音を交互に聞いて振り返る制作アイデア。",
+    "audience": "外国語の発音を練習する人",
+    "features": [
+      "短いお手本音声の登録",
+      "自分の発音の録音",
+      "二つの音声の交互再生"
+    ],
+    "acceptance": [
+      "録音権限を拒否してもお手本を再生できる",
+      "別カードの録音が混ざらない",
+      "削除前に録音を保存・書き出しできる"
+    ],
+    "data": [
+      "PronunciationCard",
+      "Recording",
+      "PracticeSession"
+    ],
+    "caution": "発音採点を初期機能にせず、お手本音源の利用権を確認する。"
+  },
+  {
+    "id": "016",
+    "slug": "exam-mistake-log",
+    "title": "間違いから始める問題帳",
+    "category": "学び・言葉",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "間違えた理由と自分で作った例題を蓄積する制作アイデア。",
+    "audience": "資格や試験の勉強をする人",
+    "features": [
+      "間違い・理由・解き方の記録",
+      "苦手分野ごとの絞り込み",
+      "解き直し結果の記録"
+    ],
+    "acceptance": [
+      "同じ問題の複数回の解答を比較できる",
+      "未解決の問題だけを表示できる",
+      "分野名を変えても記録が残る"
+    ],
+    "data": [
+      "Mistake",
+      "Topic",
+      "RetryResult"
+    ],
+    "caution": "市販問題集の問題文や画像を他人へ公開する設計にしない。"
+  },
+  {
+    "id": "017",
+    "slug": "learning-session-timer",
+    "title": "学びの区切りタイマー",
+    "category": "学び・言葉",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "学習時間と取り組んだ内容を一緒に記録する制作アイデア。",
+    "audience": "短い集中時間を積みたい人",
+    "features": [
+      "集中と休憩のタイマー",
+      "終了時の一行メモ",
+      "週ごとの学習記録"
+    ],
+    "acceptance": [
+      "画面を閉じた時間も経過時刻から復元する",
+      "途中終了と完了を別に記録する",
+      "タイムゾーン変更でも履歴が二重にならない"
+    ],
+    "data": [
+      "StudySession",
+      "TimerPreset",
+      "Reflection"
+    ],
+    "caution": "バックグラウンド通知の制約を確認し、鳴ることを無条件に保証しない。"
+  },
+  {
+    "id": "018",
+    "slug": "parallel-text-reader",
+    "title": "対訳を並べる読書室",
+    "category": "学び・言葉",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "利用可能な文章の原文と自分の訳を段落ごとに並べる制作アイデア。",
+    "audience": "外国語の読解を練習する人",
+    "features": [
+      "原文と訳文の段落対応",
+      "単語メモの追加",
+      "対応した段落の書き出し"
+    ],
+    "acceptance": [
+      "長さの違う訳文でも段落の対応を保つ",
+      "片方だけ未入力でも作業を保存できる",
+      "元の改行を保持して再読込できる"
+    ],
+    "data": [
+      "TextDocument",
+      "ParagraphPair",
+      "TermNote"
+    ],
+    "caution": "全文を外部翻訳APIへ送る前に許可を確認し、サンプル文で試す。"
+  },
+  {
+    "id": "019",
+    "slug": "micro-course-builder",
+    "title": "小さな教材メーカー",
+    "category": "学び・言葉",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "短い説明と確認問題をまとめて配る制作アイデア。",
+    "audience": "社内や教室で教える人",
+    "features": [
+      "説明カードと選択問題の作成",
+      "受講者向けのプレビュー",
+      "教材を静的HTMLで書き出し"
+    ],
+    "acceptance": [
+      "書き出した教材がネット接続なしで開ける",
+      "正解を変更すると採点も変わる",
+      "画像に代替テキストを設定できる"
+    ],
+    "data": [
+      "Course",
+      "LessonCard",
+      "QuizQuestion"
+    ],
+    "caution": "受講者の個人情報や成績収集は後回しにし、教材だけで試す。"
+  },
+  {
+    "id": "020",
+    "slug": "meeting-decision-log",
+    "title": "会議の決定ログ",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "会議で決まったことと残った疑問を後から辿れる制作アイデア。",
+    "audience": "会議の共有を担当する人",
+    "features": [
+      "議題別の決定事項と理由",
+      "担当・期日の記録",
+      "共有用Markdown出力"
+    ],
+    "acceptance": [
+      "未決事項が決定事項に混ざらない",
+      "担当未設定の項目が分かる",
+      "出力から非共有のメモを除外できる"
+    ],
+    "data": [
+      "Meeting",
+      "Decision",
+      "FollowUp"
+    ],
+    "caution": "録音や自動文字起こしを最初から必須にせず、共有範囲を確認する。"
+  },
+  {
+    "id": "021",
+    "slug": "estimate-scope-builder",
+    "title": "見積もりの範囲メモ",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "作業項目と含まれる範囲を顧客向けの見積もり下書きにする制作アイデア。",
+    "audience": "制作の見積もりを作る人",
+    "features": [
+      "作業項目と数量・単価の入力",
+      "含む作業と追加作業の整理",
+      "印刷可能な見積もり下書き"
+    ],
+    "acceptance": [
+      "数量や割引の変更が合計へ反映される",
+      "通貨・端数処理を明示できる",
+      "未確定の項目を下書きとして区別する"
+    ],
+    "data": [
+      "Estimate",
+      "LineItem",
+      "ScopeNote"
+    ],
+    "caution": "税率や請求要件は固定せず確認項目にし、契約の成立を自動扱いしない。"
+  },
+  {
+    "id": "022",
+    "slug": "client-intake-form",
+    "title": "依頼の聞き取りフォーム",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "制作に必要な情報を集め、抜けた点を見えるようにする制作アイデア。",
+    "audience": "依頼を受けるフリーランス",
+    "features": [
+      "案件種別に合わせた質問",
+      "入力途中の保存",
+      "回答を案件メモへ変換"
+    ],
+    "acceptance": [
+      "必須項目が欠けると該当箇所を知らせる",
+      "戻る操作で入力内容を失わない",
+      "他人の回答をURL変更だけで見られない"
+    ],
+    "data": [
+      "IntakeTemplate",
+      "Response",
+      "ProjectBrief"
+    ],
+    "caution": "公開回答をモックで試し、個人情報の保管先と削除方法を決める。"
+  },
+  {
+    "id": "023",
+    "slug": "document-diff-notes",
+    "title": "資料の変更点ノート",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "二つのテキスト資料を比べ、変更の理由を記録する制作アイデア。",
+    "audience": "改訂資料を確認する人",
+    "features": [
+      "旧版と新版の差分表示",
+      "変更箇所への確認メモ",
+      "確認済み差分の一覧"
+    ],
+    "acceptance": [
+      "追加・削除・変更を区別して表示する",
+      "日本語の改行を壊さず比較できる",
+      "比較対象を変えると古い確認状態を混用しない"
+    ],
+    "data": [
+      "DocumentVersion",
+      "ChangeBlock",
+      "ReviewNote"
+    ],
+    "caution": "最初はテキスト入力に絞り、機密資料を外部送信しない。"
+  },
+  {
+    "id": "024",
+    "slug": "browser-snippet-palette",
+    "title": "定型文の道具箱",
+    "category": "仕事・資料",
+    "platform": "extension",
+    "level": "はじめて",
+    "summary": "よく使う自分の文面を検索してコピーする制作アイデア。",
+    "audience": "似た連絡を繰り返す人",
+    "features": [
+      "定型文と検索タグの登録",
+      "差し込み欄の入力",
+      "確認後のクリップボードコピー"
+    ],
+    "acceptance": [
+      "未入力の差し込み欄を知らせる",
+      "コピー前に完成文を読める",
+      "ページへ自動投稿や自動送信をしない"
+    ],
+    "data": [
+      "Snippet",
+      "Variable",
+      "SnippetTag"
+    ],
+    "caution": "秘密情報や顧客固有の値を共通テンプレートへ混ぜない。"
+  },
+  {
+    "id": "025",
+    "slug": "freelance-capacity-map",
+    "title": "仕事の余白カレンダー",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "案件ごとの作業見込みを並べ、受けられる余白を確認する制作アイデア。",
+    "audience": "複数案件を扱う人",
+    "features": [
+      "日ごとの作業枠と案件予定",
+      "負荷が高い日の表示",
+      "仮予定と確定予定の区別"
+    ],
+    "acceptance": [
+      "予定の重なりが日単位で見える",
+      "週の開始曜日を変えても予定を保つ",
+      "休日を除いた空き枠を確認できる"
+    ],
+    "data": [
+      "Workday",
+      "Assignment",
+      "CapacityRule"
+    ],
+    "caution": "所要時間は本人の見積もりとして扱い、納期達成を予測で保証しない。"
+  },
+  {
+    "id": "026",
+    "slug": "feedback-triage-board",
+    "title": "フィードバック仕分け帳",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "利用者から来た声を課題と結び、対応理由を残す制作アイデア。",
+    "audience": "小さなサービスの運営者",
+    "features": [
+      "フィードバックの手入力とタグ",
+      "関連する声のグループ化",
+      "対応状況と判断理由"
+    ],
+    "acceptance": [
+      "元の声を残したまままとめられる",
+      "対応しない理由も記録できる",
+      "個人名を除いて共有用に出力できる"
+    ],
+    "data": [
+      "Feedback",
+      "IssueGroup",
+      "ResponseDecision"
+    ],
+    "caution": "自動分類を使う場合はモックから始め、分類を人が変更できるようにする。"
+  },
+  {
+    "id": "027",
+    "slug": "file-handover-manifest",
+    "title": "納品ファイルの点検表",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "納品するファイルの一覧と版を揃えて渡す制作アイデア。",
+    "audience": "データを納品する制作者",
+    "features": [
+      "ローカルファイル一覧の読取",
+      "必要形式と命名の点検",
+      "納品一覧CSVの書き出し"
+    ],
+    "acceptance": [
+      "同名で別フォルダのファイルを区別できる",
+      "不足した拡張子を一覧で示せる",
+      "点検だけで元ファイル名や内容を変えない"
+    ],
+    "data": [
+      "Delivery",
+      "FileEntry",
+      "Requirement"
+    ],
+    "caution": "ファイル内容のアップロードは不要にし、ブラウザ対応を明示する。"
+  },
+  {
+    "id": "028",
+    "slug": "browser-link-checklist",
+    "title": "公開前リンク点検",
+    "category": "開発・運用",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "表示中のページにあるリンクを一覧にして確認する制作アイデア。",
+    "audience": "Webページを公開する人",
+    "features": [
+      "利用者が押した時だけリンク収集",
+      "相対URLの解決と重複整理",
+      "手動確認済みマークとCSV出力"
+    ],
+    "acceptance": [
+      "同一ページ内のリンクを重複表示しない",
+      "メールリンクや電話リンクをHTTPと区別する",
+      "収集対象外のタブへアクセスしない"
+    ],
+    "data": [
+      "PageAudit",
+      "LinkEntry",
+      "CheckResult"
+    ],
+    "caution": "認証ページを勝手に巡回せず、通信による自動チェックは別途承認する。"
+  },
+  {
+    "id": "029",
+    "slug": "meal-rotation-notebook",
+    "title": "献立のローテーション帳",
+    "category": "暮らし・習慣",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "よく作る料理から今週の献立と買い物メモを組む制作アイデア。",
+    "audience": "献立を毎週考える人",
+    "features": [
+      "料理と材料の手入力",
+      "曜日への献立割り当て",
+      "材料別の買い物一覧"
+    ],
+    "acceptance": [
+      "同じ材料をまとめても単位違いを混ぜない",
+      "献立変更が買い物一覧へ反映される",
+      "保存済み献立をオフラインで開ける"
+    ],
+    "data": [
+      "Recipe",
+      "MealPlan",
+      "Ingredient"
+    ],
+    "caution": "栄養診断やアレルギー安全判定は扱わず、記録と整理に絞る。"
+  },
+  {
+    "id": "030",
+    "slug": "home-stock-map",
+    "title": "家のストック地図",
+    "category": "暮らし・習慣",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "日用品の残りと置き場所を家の中で探しやすくする制作アイデア。",
+    "audience": "買い忘れや重複購入を減らしたい人",
+    "features": [
+      "品目・数量・置き場所の登録",
+      "少ない物だけの表示",
+      "補充履歴"
+    ],
+    "acceptance": [
+      "数量を0にしても品目が消えない",
+      "置き場所を変えても補充履歴を保つ",
+      "負の数量を入力すると修正を促す"
+    ],
+    "data": [
+      "StockItem",
+      "StoragePlace",
+      "RestockEvent"
+    ],
+    "caution": "複数端末同期は後から追加し、まず端末内で履歴の整合性を確かめる。"
+  },
+  {
+    "id": "031",
+    "slug": "wardrobe-combinations",
+    "title": "服の組み合わせ帳",
+    "category": "暮らし・習慣",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "持っている服を写真で整理し、組み合わせを残す制作アイデア。",
+    "audience": "服選びを記録したい人",
+    "features": [
+      "服の写真とタグ登録",
+      "コーディネートの組み合わせ",
+      "季節や場面で絞り込み"
+    ],
+    "acceptance": [
+      "写真の向きが違っても正しく表示する",
+      "服を非表示にしても過去の組み合わせを辿れる",
+      "写真削除の前に使用中の組み合わせを知らせる"
+    ],
+    "data": [
+      "Garment",
+      "Outfit",
+      "WearTag"
+    ],
+    "caution": "人物や部屋が写った写真は端末内を初期値にし、位置情報も扱いを確認する。"
+  },
+  {
+    "id": "032",
+    "slug": "cleaning-rotation",
+    "title": "掃除の持ち回り",
+    "category": "暮らし・習慣",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "掃除場所ごとの頻度と前回実施日を整理する制作アイデア。",
+    "audience": "家事を分担する家庭",
+    "features": [
+      "場所ごとの掃除周期",
+      "今回担当と実施履歴",
+      "期限が近い場所の一覧"
+    ],
+    "acceptance": [
+      "実施後に次回予定を更新する",
+      "担当交代でも以前の履歴を失わない",
+      "周期未設定の場所も一覧で管理できる"
+    ],
+    "data": [
+      "CleaningArea",
+      "CleaningEvent",
+      "HouseholdMember"
+    ],
+    "caution": "家族共有を付ける場合は招待制にし、氏名の公開を初期設定にしない。"
+  },
+  {
+    "id": "033",
+    "slug": "garden-watering-log",
+    "title": "植物のお世話ログ",
+    "category": "暮らし・習慣",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "自分の植物の写真と水やり履歴を振り返る制作アイデア。",
+    "audience": "鉢植えを育てる人",
+    "features": [
+      "植物ごとのお世話記録",
+      "写真の時系列表示",
+      "自分で設定するリマインダー"
+    ],
+    "acceptance": [
+      "同名の植物を別個体として管理できる",
+      "写真の日付を編集しても並び替わる",
+      "通知なしでも前回のお世話日を確認できる"
+    ],
+    "data": [
+      "Plant",
+      "CareEvent",
+      "PlantPhoto"
+    ],
+    "caution": "写真から病気や適切な水量を断定する機能は初期範囲に入れない。"
+  },
+  {
+    "id": "034",
+    "slug": "habit-reflection",
+    "title": "続け方を探す習慣ノート",
+    "category": "暮らし・習慣",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "実施したかだけでなく続いた条件を短く残す制作アイデア。",
+    "audience": "生活の習慣を試す人",
+    "features": [
+      "習慣ごとの実施・休み記録",
+      "一行の振り返り",
+      "週ごとの傾向表示"
+    ],
+    "acceptance": [
+      "休みと未記録を別に表示する",
+      "過去日の修正が週表示にも反映される",
+      "連続記録が切れても履歴を失わない"
+    ],
+    "data": [
+      "Habit",
+      "DailyEntry",
+      "Reflection"
+    ],
+    "caution": "達成率を診断に使わず、通知回数を利用者が調整できるようにする。"
+  },
+  {
+    "id": "035",
+    "slug": "household-manuals",
+    "title": "家電の説明書棚",
+    "category": "整理・発見",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "説明書と型番を家電ごとにまとめて探す制作アイデア。",
+    "audience": "家庭の機器を管理する人",
+    "features": [
+      "家電の型番とメーカーURL",
+      "保証期限のメモ",
+      "場所や種類から検索"
+    ],
+    "acceptance": [
+      "同じメーカーの別型番を区別できる",
+      "期限なしの機器も登録できる",
+      "元の公式説明書リンクを開ける"
+    ],
+    "data": [
+      "Appliance",
+      "ManualLink",
+      "WarrantyMemo"
+    ],
+    "caution": "購入明細を共有する場合は住所・注文番号を含めない表示を用意する。"
+  },
+  {
+    "id": "036",
+    "slug": "family-recipe-notes",
+    "title": "わが家のレシピ手帖",
+    "category": "暮らし・習慣",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "自分で調整した分量と作り方を版ごとに残す制作アイデア。",
+    "audience": "料理を自分流に調整する人",
+    "features": [
+      "材料と工程の登録",
+      "作った時の変更メモ",
+      "人数に合わせた分量表示"
+    ],
+    "acceptance": [
+      "人数を戻すと元の分量へ戻る",
+      "数値にできない分量は無理に計算しない",
+      "改訂しても以前の作り方を確認できる"
+    ],
+    "data": [
+      "RecipeVersion",
+      "IngredientAmount",
+      "CookingNote"
+    ],
+    "caution": "転載レシピを公開せず、自分のメモと参照元URLを分ける。"
+  },
+  {
+    "id": "037",
+    "slug": "local-shop-menu",
+    "title": "小さなお店のメニュー表",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "営業中の商品と売り切れをスマホから更新する制作アイデア。",
+    "audience": "個人店の店主",
+    "features": [
+      "商品名・写真・価格の登録",
+      "売り切れ状態の切り替え",
+      "来店者向けメニュー画面"
+    ],
+    "acceptance": [
+      "管理用画面を来店者から操作できない",
+      "売り切れ商品を一覧で区別できる",
+      "価格未入力で公開しようとすると知らせる"
+    ],
+    "data": [
+      "MenuItem",
+      "MenuCategory",
+      "Availability"
+    ],
+    "caution": "アレルゲンや営業日の記載は店主が確認し、注文や決済は初期対象にしない。"
+  },
+  {
+    "id": "038",
+    "slug": "appointment-request-board",
+    "title": "予約希望の受付帳",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "来店者の希望日時を受け、店舗側で確定する制作アイデア。",
+    "audience": "予約を手動で調整するお店",
+    "features": [
+      "希望日時の送信フォーム",
+      "店舗側の承認・変更",
+      "本人向け受付状態の表示"
+    ],
+    "acceptance": [
+      "同じ枠の承認が重複しない",
+      "希望受付と予約確定を別の状態として示す",
+      "他人の予約情報を推測URLで見られない"
+    ],
+    "data": [
+      "AppointmentRequest",
+      "TimeSlot",
+      "BookingDecision"
+    ],
+    "caution": "メール送信はモックで検証し、公開時の保存期間とキャンセル方法を決める。"
+  },
+  {
+    "id": "039",
+    "slug": "market-stall-map",
+    "title": "マルシェの出店マップ",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "イベント会場の出店場所とジャンルを案内する制作アイデア。",
+    "audience": "地域イベントの主催者",
+    "features": [
+      "会場画像上の出店位置",
+      "ジャンル別フィルター",
+      "お気に入り店舗の端末内保存"
+    ],
+    "acceptance": [
+      "地図を拡大してもマーカー位置がずれない",
+      "同じ出店者の複数区画を表示できる",
+      "地図を使えない人向け一覧がある"
+    ],
+    "data": [
+      "Venue",
+      "Stall",
+      "Vendor"
+    ],
+    "caution": "地図画像の利用権を確認し、混雑や移動経路の安全を自動判断しない。"
+  },
+  {
+    "id": "040",
+    "slug": "community-lost-found",
+    "title": "落とし物の引き継ぎ台帳",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "施設内の落とし物の保管と返却を担当者間で共有する制作アイデア。",
+    "audience": "施設の受付担当者",
+    "features": [
+      "拾得物の特徴と保管場所",
+      "返却確認の記録",
+      "保管期限の一覧"
+    ],
+    "acceptance": [
+      "返却済みの品が未返却一覧から外れる",
+      "閲覧権限のない人へ写真を返さない",
+      "同じ名前の品も識別番号で区別できる"
+    ],
+    "data": [
+      "FoundItem",
+      "CustodyEvent",
+      "ReturnRecord"
+    ],
+    "caution": "公開検索を初期実装にせず、本人確認情報や連絡先の扱いを決める。"
+  },
+  {
+    "id": "041",
+    "slug": "workshop-seat-planner",
+    "title": "ワークショップ席割り",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "会場の机と参加者グループを配置して準備する制作アイデア。",
+    "audience": "教室や体験会の主催者",
+    "features": [
+      "机と定員の配置",
+      "グループを席へ割り当て",
+      "名前を伏せた印刷図"
+    ],
+    "acceptance": [
+      "定員を超えた配置を知らせる",
+      "机を移動しても参加者の割り当てが保たれる",
+      "印刷図で非公開項目を除外できる"
+    ],
+    "data": [
+      "RoomLayout",
+      "Table",
+      "ParticipantGroup"
+    ],
+    "caution": "参加者の連絡先を配置図へ含めず、ダミー参加者で検証する。"
+  },
+  {
+    "id": "042",
+    "slug": "library-lending-log",
+    "title": "小さな貸し出し台帳",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "本や備品の貸し出し・返却を簡単に記録する制作アイデア。",
+    "audience": "小規模な共有棚の管理者",
+    "features": [
+      "備品と識別番号の登録",
+      "貸出日・返却予定日",
+      "返却操作と履歴"
+    ],
+    "acceptance": [
+      "貸出中の同じ個体を重ねて貸し出せない",
+      "返却後も過去の貸出履歴が残る",
+      "期限超過と返却済みを区別する"
+    ],
+    "data": [
+      "InventoryItem",
+      "Loan",
+      "BorrowerAlias"
+    ],
+    "caution": "借り手は必要最小限の呼び名で始め、公開ページに貸出履歴を載せない。"
+  },
+  {
+    "id": "043",
+    "slug": "local-favorites-guide",
+    "title": "近所のおすすめ手帖",
+    "category": "お店・地域",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "自分で訪れた店や場所の感想を残す制作アイデア。",
+    "audience": "近所を歩くのが好きな人",
+    "features": [
+      "場所と自分のメモ",
+      "タグによる分類",
+      "再訪したい場所の一覧"
+    ],
+    "acceptance": [
+      "同じ場所に複数回の訪問記録を残せる",
+      "位置権限を拒否しても手入力できる",
+      "非公開メモを共有出力へ含めない"
+    ],
+    "data": [
+      "Place",
+      "VisitNote",
+      "PlaceTag"
+    ],
+    "caution": "店の最新情報を断定せず、写真の他人の顔や位置情報に配慮する。"
+  },
+  {
+    "id": "044",
+    "slug": "volunteer-shift-match",
+    "title": "地域当番のシフト表",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "必要な当番枠と参加できる時間を合わせる制作アイデア。",
+    "audience": "地域活動の担当者",
+    "features": [
+      "当番枠と必要人数の設定",
+      "参加可能時間の回答",
+      "確定シフトの閲覧"
+    ],
+    "acceptance": [
+      "定員を超えた割り当てを知らせる",
+      "回答変更で確定済みシフトを無断変更しない",
+      "未回答者を管理者だけが確認できる"
+    ],
+    "data": [
+      "ShiftSlot",
+      "AvailabilityResponse",
+      "Assignment"
+    ],
+    "caution": "公開フォームの回答をモックで試し、名簿は参加者以外へ公開しない。"
+  },
+  {
+    "id": "045",
+    "slug": "stamp-walk-card",
+    "title": "街歩きの達成カード",
+    "category": "お店・地域",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "決めた立ち寄り先を巡り、自分の記録を集める制作アイデア。",
+    "audience": "街歩きイベントの参加者",
+    "features": [
+      "訪問先カードの一覧",
+      "QRコードで達成記録",
+      "自分の達成状況"
+    ],
+    "acceptance": [
+      "同じQRを読んでも達成数が重複しない",
+      "不明なQRを読み込んでも外部URLを自動実行しない",
+      "カメラ権限なしでも手動コードを使える"
+    ],
+    "data": [
+      "RouteCard",
+      "Checkpoint",
+      "Completion"
+    ],
+    "caution": "景品交換など不正対策が必要な運用は、端末内記録とは別に設計する。"
+  },
+  {
+    "id": "046",
+    "slug": "shop-queue-display",
+    "title": "店頭の順番ボード",
+    "category": "お店・地域",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "受付番号と呼び出し中の番号を店内に表示する制作アイデア。",
+    "audience": "順番待ちのある小規模店",
+    "features": [
+      "番号だけの受付登録",
+      "呼び出しと対応済み操作",
+      "来店者向け表示"
+    ],
+    "acceptance": [
+      "同時受付でも番号が重複しない",
+      "表示側から管理操作を実行できない",
+      "通信が切れた時は古い情報だと分かる"
+    ],
+    "data": [
+      "QueueEntry",
+      "ServiceCounter",
+      "QueueEvent"
+    ],
+    "caution": "待ち時間を保証せず、氏名や電話番号は初期範囲に入れない。"
+  },
+  {
+    "id": "047",
+    "slug": "creative-palette-shelf",
+    "title": "配色の実験棚",
+    "category": "趣味・創作",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "気に入った色を組み合わせ、実際の画面で試す制作アイデア。",
+    "audience": "配色を考える人",
+    "features": [
+      "色コードの登録",
+      "文字・背景の組み合わせプレビュー",
+      "CSS変数の書き出し"
+    ],
+    "acceptance": [
+      "不正な色コードを入力すると説明する",
+      "文字と背景のコントラスト値を確認できる",
+      "書き出したCSSで同じ色を再現できる"
+    ],
+    "data": [
+      "Palette",
+      "ColorSwatch",
+      "ColorRole"
+    ],
+    "caution": "画像から抽出する場合は自分の画像を使い、既存ブランドの配色コピーを目的にしない。"
+  },
+  {
+    "id": "048",
+    "slug": "story-character-notes",
+    "title": "物語の登場人物ノート",
+    "category": "趣味・創作",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "登場人物と出来事の関係を矛盾なく整理する制作アイデア。",
+    "audience": "物語を書く人",
+    "features": [
+      "人物プロフィール",
+      "人物同士の関係",
+      "章ごとの登場メモ"
+    ],
+    "acceptance": [
+      "人物名を変更すると参照先も更新される",
+      "同じ人物に複数の関係を付けられる",
+      "未設定の関係先を見つけられる"
+    ],
+    "data": [
+      "Character",
+      "Relationship",
+      "ChapterAppearance"
+    ],
+    "caution": "既存作品の本文やキャラクター設定を無断で取り込まない。"
+  },
+  {
+    "id": "049",
+    "slug": "music-practice-journal",
+    "title": "楽器の練習ログ",
+    "category": "趣味・創作",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "練習した曲と気付きを録音と一緒に振り返る制作アイデア。",
+    "audience": "楽器を練習する人",
+    "features": [
+      "曲と練習目標",
+      "テンポ・練習時間の記録",
+      "短い録音と振り返り"
+    ],
+    "acceptance": [
+      "同じ曲の前回記録をすぐ開ける",
+      "録音なしでも練習を保存できる",
+      "保存容量が足りない時に記録だけを残せる"
+    ],
+    "data": [
+      "PracticePiece",
+      "PracticeEntry",
+      "AudioMemo"
+    ],
+    "caution": "録音の公開や楽曲データの配布は別途利用権を確認する。"
+  },
+  {
+    "id": "050",
+    "slug": "craft-pattern-counter",
+    "title": "編み物の段数カウンター",
+    "category": "趣味・創作",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "作品ごとの段数と作業メモを大きなボタンで記録する制作アイデア。",
+    "audience": "編み物や反復作業をする人",
+    "features": [
+      "作品別カウンター",
+      "戻す操作と操作履歴",
+      "糸や道具のメモ"
+    ],
+    "acceptance": [
+      "誤タップを一つ前へ戻せる",
+      "別作品へ切り替えても数字を保つ",
+      "アプリを閉じて再開しても段数が同じ"
+    ],
+    "data": [
+      "CraftProject",
+      "CounterEvent",
+      "MaterialMemo"
+    ],
+    "caution": "振動などの端末機能がない環境でも操作結果を視覚で伝える。"
+  },
+  {
+    "id": "051",
+    "slug": "photo-walk-collections",
+    "title": "写真散歩コレクション",
+    "category": "趣味・創作",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "散歩で撮った写真をテーマと気付きでまとめる制作アイデア。",
+    "audience": "写真を撮るのが好きな人",
+    "features": [
+      "テーマ別写真アルバム",
+      "撮影時の気付きメモ",
+      "選んだ写真の並べ替え"
+    ],
+    "acceptance": [
+      "縦横の写真が混在しても一覧を操作できる",
+      "元画像を変更せず表示順を保存する",
+      "写真なしのメモも残せる"
+    ],
+    "data": [
+      "PhotoCollection",
+      "PhotoEntry",
+      "Observation"
+    ],
+    "caution": "位置情報は初期表示しない設定にし、外部共有前に含有情報を確認する。"
+  },
+  {
+    "id": "052",
+    "slug": "boardgame-scorebook",
+    "title": "ボードゲーム得点帳",
+    "category": "趣味・創作",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "自分たちのゲームの得点をラウンドごとに集計する制作アイデア。",
+    "audience": "家族や友人と遊ぶ人",
+    "features": [
+      "プレイヤーと得点項目",
+      "ラウンドごとの入力",
+      "集計と過去ゲームの比較"
+    ],
+    "acceptance": [
+      "マイナス点と同点順位を扱える",
+      "入力ミスを直すと合計が更新される",
+      "ゲーム終了後も各ラウンドを見返せる"
+    ],
+    "data": [
+      "GameSession",
+      "PlayerAlias",
+      "RoundScore"
+    ],
+    "caution": "公式ルールや画像を複製せず、集計ルールを利用者が設定できる形にする。"
+  },
+  {
+    "id": "053",
+    "slug": "museum-memory-map",
+    "title": "展示の鑑賞ノート",
+    "category": "趣味・創作",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "展覧会で気になった作品と自分の感想を残す制作アイデア。",
+    "audience": "展示を見に行く人",
+    "features": [
+      "展覧会と作品メモ",
+      "自分の感想やスケッチ",
+      "テーマ別の振り返り"
+    ],
+    "acceptance": [
+      "写真撮影なしでも作品メモを作れる",
+      "同じ作品の別の鑑賞記録を残せる",
+      "非公開の感想を共有出力から外せる"
+    ],
+    "data": [
+      "Exhibition",
+      "ArtworkNote",
+      "ReflectionTag"
+    ],
+    "caution": "撮影や掲載の可否は会場ごとに確認し、作品画像を自動収集しない。"
+  },
+  {
+    "id": "054",
+    "slug": "browser-inspiration-board",
+    "title": "ひらめきピンボード",
+    "category": "趣味・創作",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "Webで見つけた参考のURLと自分の観察をテーマでまとめる制作アイデア。",
+    "audience": "デザインや企画を考える人",
+    "features": [
+      "現在ページのURLをカード保存",
+      "自分の観察とテーマタグ",
+      "ボード形式の一覧"
+    ],
+    "acceptance": [
+      "保存時に元ページへ戻れるリンクが残る",
+      "同じURLを別ボードへ参照できる",
+      "明示操作なしにスクリーンショットを撮らない"
+    ],
+    "data": [
+      "InspirationCard",
+      "Board",
+      "ObservationTag"
+    ],
+    "caution": "参考画像の複製は初期機能にせず、出典と自分の観察を中心にする。"
+  },
+  {
+    "id": "055",
+    "slug": "writing-sprint-room",
+    "title": "執筆スプリント机",
+    "category": "趣味・創作",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "短い執筆時間と書いた内容を静かな画面で残す制作アイデア。",
+    "audience": "文章を書く習慣を作りたい人",
+    "features": [
+      "自動保存するテキストエディタ",
+      "時間と文字数の記録",
+      "Markdown出力"
+    ],
+    "acceptance": [
+      "入力途中に再読込しても最後の保存内容へ戻る",
+      "絵文字を含む文字数の数え方を表示する",
+      "書き出した文章に元の改行が残る"
+    ],
+    "data": [
+      "Draft",
+      "WritingSession",
+      "Snapshot"
+    ],
+    "caution": "自動保存とバックアップを区別し、端末保存の限界を案内する。"
+  },
+  {
+    "id": "056",
+    "slug": "collection-trade-checklist",
+    "title": "コレクションの持ち物表",
+    "category": "趣味・創作",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "持っている物と欲しい物を番号や写真で整理する制作アイデア。",
+    "audience": "グッズや模型を集める人",
+    "features": [
+      "アイテムの所持数と希望状態",
+      "シリーズ別の一覧",
+      "交換相談用リストの出力"
+    ],
+    "acceptance": [
+      "同じアイテムの複数個を数えられる",
+      "非公開の購入価格を出力から除ける",
+      "並び替えてもアイテム番号と状態がずれない"
+    ],
+    "data": [
+      "Collectible",
+      "Ownership",
+      "WishlistEntry"
+    ],
+    "caution": "売買・相場予測は初期機能にせず、住所や連絡先を公開しない。"
+  },
+  {
+    "id": "057",
+    "slug": "team-onboarding-trail",
+    "title": "チームの最初の道しるべ",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "新しく入った人が必要な資料と確認項目を順に辿る制作アイデア。",
+    "audience": "小さなチームの受け入れ担当",
+    "features": [
+      "役割別の案内コース",
+      "資料リンクと確認項目",
+      "質問の記録"
+    ],
+    "acceptance": [
+      "役割を変えると該当コースだけを表示する",
+      "確認済み状態は本人ごとに分かれる",
+      "アクセス権のない資料を一覧経由でも取得できない"
+    ],
+    "data": [
+      "OnboardingPath",
+      "MemberProgress",
+      "Question"
+    ],
+    "caution": "社内の秘密や個人データはサンプルへ置き換え、外部共有範囲を確認する。"
+  },
+  {
+    "id": "058",
+    "slug": "community-topic-box",
+    "title": "コミュニティのお題箱",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "次に話したいテーマを集め、重複をまとめる制作アイデア。",
+    "audience": "勉強会や交流会の主催者",
+    "features": [
+      "テーマ候補の投稿",
+      "一人一票の興味投票",
+      "開催済みテーマの記録"
+    ],
+    "acceptance": [
+      "同じ利用者の連打で票数が増えない",
+      "非公開の投稿を一般一覧へ出さない",
+      "候補を統合しても元の提案内容を辿れる"
+    ],
+    "data": [
+      "TopicProposal",
+      "Vote",
+      "SessionRecord"
+    ],
+    "caution": "投稿をモックで試し、公開時の迷惑投稿対策と削除窓口を用意する。"
+  },
+  {
+    "id": "059",
+    "slug": "retrospective-cards",
+    "title": "ふりかえりカード会",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "活動のよかった点と次に試すことをカードで整理する制作アイデア。",
+    "audience": "小規模チームの進行役",
+    "features": [
+      "振り返りカードの入力",
+      "似たカードのグループ化",
+      "次の実験と担当の決定"
+    ],
+    "acceptance": [
+      "投稿者名の公開設定をカードごとに守る",
+      "移動してもカード本文を失わない",
+      "終了後に決まった実験だけを出力できる"
+    ],
+    "data": [
+      "Retrospective",
+      "ReflectionCard",
+      "Experiment"
+    ],
+    "caution": "匿名と表示していても管理者が識別できる場合は、その範囲を明示する。"
+  },
+  {
+    "id": "060",
+    "slug": "shared-equipment-booking",
+    "title": "共用機材の予約帳",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "じっくり",
+    "summary": "カメラや会議室など共用資源の予約を整理する制作アイデア。",
+    "audience": "機材を共同で使うチーム",
+    "features": [
+      "資源ごとの予約カレンダー",
+      "重複しない予約確定",
+      "貸出・返却状態"
+    ],
+    "acceptance": [
+      "同時予約でも同じ時間帯に二重確定しない",
+      "権限のない人が他人の予約を変更できない",
+      "日をまたぐ予約を正しく表示する"
+    ],
+    "data": [
+      "SharedResource",
+      "Reservation",
+      "Checkout"
+    ],
+    "caution": "競合はサーバー側で検証し、端末画面の空き表示だけに依存しない。"
+  },
+  {
+    "id": "061",
+    "slug": "study-group-matcher",
+    "title": "勉強会のペア決め",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "参加者の希望テーマと参加回数から話す組を提案する制作アイデア。",
+    "audience": "少人数の勉強会主催者",
+    "features": [
+      "参加者の希望テーマ",
+      "組み合わせの提案と手動調整",
+      "前回組んだ相手の履歴"
+    ],
+    "acceptance": [
+      "人数が奇数でも残った人を見失わない",
+      "手動で変えた組み合わせを保存できる",
+      "同じ条件から提案ルールを確認できる"
+    ],
+    "data": [
+      "ParticipantAlias",
+      "Interest",
+      "PairingRound"
+    ],
+    "caution": "個人の優劣を評価せず、テーマの一致や過去の組み合わせだけを使う。"
+  },
+  {
+    "id": "062",
+    "slug": "event-runbook",
+    "title": "イベント進行の台本箱",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "当日の時刻と担当を一つの進行表にまとめる制作アイデア。",
+    "audience": "オンライン・現地イベントの運営者",
+    "features": [
+      "進行項目と担当",
+      "開始時刻からの予定計算",
+      "当日用の大きな表示"
+    ],
+    "acceptance": [
+      "開始時刻変更で後続予定が再計算される",
+      "実績時刻と予定時刻を分けて残せる",
+      "印刷時に必要な連絡だけを含められる"
+    ],
+    "data": [
+      "EventRun",
+      "RunbookItem",
+      "ActualTiming"
+    ],
+    "caution": "外部配信や通知を自動実行せず、初期版は閲覧と記録に絞る。"
+  },
+  {
+    "id": "063",
+    "slug": "member-skill-map",
+    "title": "得意の持ち寄りマップ",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "メンバーが教えられることと学びたいことを探す制作アイデア。",
+    "audience": "学び合うコミュニティ",
+    "features": [
+      "本人が選ぶ得意・学びたいタグ",
+      "タグからメンバー検索",
+      "相談のための紹介カード"
+    ],
+    "acceptance": [
+      "公開に同意した項目だけを検索に出す",
+      "退会した人の紹介カードを表示しない",
+      "タグの変更が検索へ反映される"
+    ],
+    "data": [
+      "MemberProfile",
+      "SkillTag",
+      "LearningInterest"
+    ],
+    "caution": "順位付けや能力判定を避け、本人申告と公開同意を使う。"
+  },
+  {
+    "id": "064",
+    "slug": "browser-team-context",
+    "title": "チーム用ページメモ",
+    "category": "チーム・コミュニティ",
+    "platform": "extension",
+    "level": "じっくり",
+    "summary": "特定の社内ページについて知っておくことを横に表示する制作アイデア。",
+    "audience": "同じWebサービスを使うチーム",
+    "features": [
+      "許可したドメインでメモ表示",
+      "ページパスごとのメモ",
+      "管理者による公開範囲設定"
+    ],
+    "acceptance": [
+      "許可外のページで内容を読み取らない",
+      "一般メンバーが管理者用メモを取得できない",
+      "メモサーバーが止まっても元ページを妨げない"
+    ],
+    "data": [
+      "DomainRule",
+      "ContextNote",
+      "Membership"
+    ],
+    "caution": "最初はモックサーバーを使い、URLに含まれる顧客IDや検索語を送信しない。"
+  },
+  {
+    "id": "065",
+    "slug": "decision-poll",
+    "title": "日程以外の合意投票",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "会場やテーマの候補を比較し、決めた理由を残す制作アイデア。",
+    "audience": "グループの調整役",
+    "features": [
+      "選択肢と比較軸",
+      "投票と任意コメント",
+      "締め切り後の決定メモ"
+    ],
+    "acceptance": [
+      "締め切り後の追加投票をサーバー側で止める",
+      "同点の時に勝手に決定しない",
+      "投票前の途中結果表示を設定できる"
+    ],
+    "data": [
+      "Poll",
+      "Option",
+      "Ballot",
+      "DecisionMemo"
+    ],
+    "caution": "匿名投票の実装範囲を正確に説明し、投票者の連絡先収集を避ける。"
+  },
+  {
+    "id": "066",
+    "slug": "api-sandbox-console",
+    "title": "APIの実験メモ帳",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "APIの入出力サンプルと試した結果を整理する制作アイデア。",
+    "audience": "API連携を学ぶ開発者",
+    "features": [
+      "モックレスポンスの切り替え",
+      "リクエスト項目と結果の表示",
+      "成功・失敗の実験記録"
+    ],
+    "acceptance": [
+      "成功・認証失敗・タイムアウトを試せる",
+      "秘密キーが画面出力や保存データに混ざらない",
+      "不正なJSONでも画面全体が止まらない"
+    ],
+    "data": [
+      "ApiScenario",
+      "RequestFixture",
+      "ExperimentResult"
+    ],
+    "caution": "実API実行は別経路にし、ブラウザへサービス秘密キーを置かない。"
+  },
+  {
+    "id": "067",
+    "slug": "release-checkroom",
+    "title": "リリース前の確認室",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "公開する版に必要な確認と証拠を一か所に残す制作アイデア。",
+    "audience": "小さなアプリを運営する人",
+    "features": [
+      "版ごとの確認項目",
+      "結果と証拠URLの記録",
+      "未完了項目の一覧"
+    ],
+    "acceptance": [
+      "前の版の結果を新しい版の完了として扱わない",
+      "失敗した項目を合格と区別する",
+      "確認者と確認日時を辿れる"
+    ],
+    "data": [
+      "ReleaseCandidate",
+      "CheckItem",
+      "Evidence"
+    ],
+    "caution": "チェック完了から自動デプロイせず、公開操作を別にする。"
+  },
+  {
+    "id": "068",
+    "slug": "feature-flag-preview",
+    "title": "機能切り替えプレビュー",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "画面の機能を条件別に切り替えて確認する制作アイデア。",
+    "audience": "段階的に機能を出す開発者",
+    "features": [
+      "ローカル機能フラグ",
+      "条件別の画面プレビュー",
+      "設定のJSON書き出し"
+    ],
+    "acceptance": [
+      "フラグを切り替えると対象箇所だけが変わる",
+      "不明なフラグは安全な初期値に戻る",
+      "設定を再読込して同じ画面を再現できる"
+    ],
+    "data": [
+      "FeatureFlag",
+      "PreviewProfile",
+      "FlagCondition"
+    ],
+    "caution": "認可をフラグで代用せず、秘密機能のAPI権限は別に検証する。"
+  },
+  {
+    "id": "069",
+    "slug": "browser-accessibility-notes",
+    "title": "画面アクセシビリティ観察",
+    "category": "開発・運用",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "ページの見出しや画像の代替テキストを確認し、改善メモを残す制作アイデア。",
+    "audience": "Web画面を見直す制作者",
+    "features": [
+      "見出し構造の一覧",
+      "代替テキストの有無表示",
+      "手動確認のメモ出力"
+    ],
+    "acceptance": [
+      "見出しがないページでも停止しない",
+      "装飾画像の空altとalt未設定を区別する",
+      "ページ内容を変更せず点検できる"
+    ],
+    "data": [
+      "PageObservation",
+      "HeadingEntry",
+      "ImageEntry"
+    ],
+    "caution": "自動点検だけで規格適合を宣言せず、キーボードや読み上げ確認を別に残す。"
+  },
+  {
+    "id": "070",
+    "slug": "webhook-event-viewer",
+    "title": "Webhookの受信練習帳",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "じっくり",
+    "summary": "イベント受信と処理結果をモックから学ぶ制作アイデア。",
+    "audience": "外部サービス連携を作る人",
+    "features": [
+      "署名付きサンプルイベントの受信",
+      "イベントIDで二重処理防止",
+      "処理の再試行と結果表示"
+    ],
+    "acceptance": [
+      "同じイベントの再送で結果が重複しない",
+      "署名不正のイベントを処理しない",
+      "失敗したイベントだけを再試行できる"
+    ],
+    "data": [
+      "WebhookEvent",
+      "ProcessingAttempt",
+      "IdempotencyKey"
+    ],
+    "caution": "機密ペイロードは保存せず、最初はローカルのダミーイベントだけで検証する。"
+  },
+  {
+    "id": "071",
+    "slug": "migration-rehearsal-notes",
+    "title": "データ移行の予行ノート",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "CSVの変換ルールと移行前後の件数を確かめる制作アイデア。",
+    "audience": "小さなデータ移行を担当する人",
+    "features": [
+      "サンプルCSVの読込",
+      "列対応と変換のプレビュー",
+      "エラー行と変換結果の出力"
+    ],
+    "acceptance": [
+      "変換で行数が減ると理由を示す",
+      "日本語・引用符・改行を含むCSVを扱える",
+      "プレビューだけでは元ファイルを変更しない"
+    ],
+    "data": [
+      "Dataset",
+      "ColumnMapping",
+      "ValidationIssue"
+    ],
+    "caution": "本番データベースへ直接書き込まず、匿名サンプルと書き出しで始める。"
+  },
+  {
+    "id": "072",
+    "slug": "incident-learning-log",
+    "title": "障害から学ぶ記録帳",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "起きたことと確認した根拠を時系列で残す制作アイデア。",
+    "audience": "サービスの不具合を振り返る人",
+    "features": [
+      "事象と観測時刻の記録",
+      "仮説と確認結果の分離",
+      "再発防止の実施メモ"
+    ],
+    "acceptance": [
+      "不明な原因を確定原因として表示しない",
+      "時刻順に並べ替えても元の記録を辿れる",
+      "公開出力から内部情報を除外できる"
+    ],
+    "data": [
+      "Incident",
+      "Observation",
+      "Hypothesis",
+      "Action"
+    ],
+    "caution": "ログ中のトークンや個人情報を取り除いてから保存する。"
+  },
+  {
+    "id": "073",
+    "slug": "design-token-lab",
+    "title": "デザイントークン実験室",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "余白・文字サイズ・色を変え、UI部品で確かめる制作アイデア。",
+    "audience": "画面の一貫性を作りたい人",
+    "features": [
+      "意味付きトークンの編集",
+      "ボタンやフォームでのプレビュー",
+      "JSONとCSS変数の出力"
+    ],
+    "acceptance": [
+      "トークン変更が全ての参照部品へ反映される",
+      "循環参照を保存前に知らせる",
+      "出力を再入力して同じ値を再現できる"
+    ],
+    "data": [
+      "DesignToken",
+      "TokenAlias",
+      "ComponentPreview"
+    ],
+    "caution": "既存デザインシステムを無断で再配布せず、自分で定義した値を扱う。"
+  },
+  {
+    "id": "074",
+    "slug": "browser-local-storage-inspector",
+    "title": "保存データの見える化",
+    "category": "開発・運用",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "自分の開発ページの保存データを確認する制作アイデア。",
+    "audience": "ブラウザ保存を使う開発者",
+    "features": [
+      "利用者が選んだ開発ドメインだけ読取",
+      "保存キーと値の表示",
+      "JSONの検証と伏字エクスポート"
+    ],
+    "acceptance": [
+      "許可していないドメインを読み取らない",
+      "巨大な値も画面を固めず表示する",
+      "秘密らしい値を伏せて出力できる"
+    ],
+    "data": [
+      "AllowedOrigin",
+      "StorageEntry",
+      "ExportRule"
+    ],
+    "caution": "初期版は読取専用にし、本番サイトやセッショントークンを対象にしない。"
+  },
+  {
+    "id": "075",
+    "slug": "mock-persona-tester",
+    "title": "利用場面のテスト台本",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "利用者の目的ごとに操作手順と観察点を整理する制作アイデア。",
+    "audience": "アプリの使いやすさを確かめる人",
+    "features": [
+      "利用目的とシナリオ",
+      "期待結果と実際の観察",
+      "未解決点の一覧"
+    ],
+    "acceptance": [
+      "期待結果と実測を別欄で残せる",
+      "シナリオを改訂しても過去結果を保つ",
+      "未実施の項目を合格と数えない"
+    ],
+    "data": [
+      "PersonaScenario",
+      "TestStep",
+      "Observation"
+    ],
+    "caution": "実在人物の個人情報を使わず、AIによる想像を実ユーザーテストと表記しない。"
+  },
+  {
+    "id": "076",
+    "slug": "trip-itinerary-cards",
+    "title": "旅程を並べるカード",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "行きたい場所と移動メモを日別に並べる制作アイデア。",
+    "audience": "自分で旅行を計画する人",
+    "features": [
+      "日別の訪問カード",
+      "移動時間の手入力",
+      "オフラインの旅程表示"
+    ],
+    "acceptance": [
+      "日を変えるとカードの並びも保存される",
+      "時差のある到着と出発を区別できる",
+      "通信なしでも保存したメモを読める"
+    ],
+    "data": [
+      "Trip",
+      "ItineraryStop",
+      "TransferMemo"
+    ],
+    "caution": "運行・営業・入国情報は手入力時点のメモとし、最新公式情報へ戻れるようにする。"
+  },
+  {
+    "id": "077",
+    "slug": "packing-by-purpose",
+    "title": "目的別の持ち物パック",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "出張や撮影などの目的に合わせて荷物一覧を組む制作アイデア。",
+    "audience": "持ち物を毎回整理する人",
+    "features": [
+      "目的別テンプレート",
+      "日数と人数による数量メモ",
+      "準備済み・当日追加の区別"
+    ],
+    "acceptance": [
+      "テンプレートから作っても元の項目を変えない",
+      "荷物を減らしても別旅行の記録へ影響しない",
+      "オフラインで確認状態を更新できる"
+    ],
+    "data": [
+      "PackingTemplate",
+      "TripPackingList",
+      "PackedItem"
+    ],
+    "caution": "航空会社などの持ち込み規則を固定せず、確認リンクを別欄にする。"
+  },
+  {
+    "id": "078",
+    "slug": "cafe-work-notes",
+    "title": "作業場所の個人メモ",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "実際に使った作業場所の自分向けメモを残す制作アイデア。",
+    "audience": "外で仕事や勉強をする人",
+    "features": [
+      "場所と訪問日",
+      "席・電源などの観察メモ",
+      "条件による絞り込み"
+    ],
+    "acceptance": [
+      "観察した日付を表示できる",
+      "同じ場所でも訪問ごとにメモを残せる",
+      "位置権限なしでも場所を登録できる"
+    ],
+    "data": [
+      "WorkspacePlace",
+      "VisitObservation",
+      "Preference"
+    ],
+    "caution": "最新の利用条件や設備を保証せず、店のルールを確認する導線を置く。"
+  },
+  {
+    "id": "079",
+    "slug": "accessible-route-notes",
+    "title": "外出経路のメモ帳",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "自分が確認した段差やエレベーターの位置を外出前に見返す制作アイデア。",
+    "audience": "移動経路を事前確認したい人",
+    "features": [
+      "経路ごとの写真メモ",
+      "観察日と確認状況",
+      "オフラインの注意点一覧"
+    ],
+    "acceptance": [
+      "観察日の古い情報を識別できる",
+      "通れなかった経路も削除せず残せる",
+      "地図なしの文章一覧を表示できる"
+    ],
+    "data": [
+      "RouteMemo",
+      "AccessObservation",
+      "Checkpoint"
+    ],
+    "caution": "通行可能や安全を保証せず、当日の公式案内と本人の確認を優先する。"
+  },
+  {
+    "id": "080",
+    "slug": "station-exit-bookmarks",
+    "title": "駅出口のしおり",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "よく行く目的地への出口と待ち合わせメモを保存する制作アイデア。",
+    "audience": "初めての場所へよく行く人",
+    "features": [
+      "駅と出口のメモ",
+      "目的地ごとの写真・目印",
+      "待ち合わせ用メモの出力"
+    ],
+    "acceptance": [
+      "同じ駅の複数出口を区別できる",
+      "私的な連絡先を共有出力から外せる",
+      "通信なしで保存した写真を開ける"
+    ],
+    "data": [
+      "Station",
+      "ExitBookmark",
+      "MeetingMemo"
+    ],
+    "caution": "構内図や写真の利用条件を確認し、工事による変更は公式案内で確かめる。"
+  },
+  {
+    "id": "081",
+    "slug": "outing-budget-notes",
+    "title": "お出かけ予算メモ",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "予定と実際の支出を旅やイベント単位で比べる制作アイデア。",
+    "audience": "外出の出費を記録したい人",
+    "features": [
+      "費目別の予算入力",
+      "支出の手入力",
+      "予算との差と明細"
+    ],
+    "acceptance": [
+      "同じ支出を編集しても二重計上しない",
+      "通貨が違う支出は分けて集計する",
+      "削除前に対象明細を確認できる"
+    ],
+    "data": [
+      "Outing",
+      "BudgetLine",
+      "Expense"
+    ],
+    "caution": "銀行連携や金融助言は扱わず、為替換算を付ける場合は基準日時を示す。"
+  },
+  {
+    "id": "082",
+    "slug": "browser-trip-research",
+    "title": "旅行候補の比較トレイ",
+    "category": "旅・外出",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "宿や訪問先のページを自分の比較メモと一緒に並べる制作アイデア。",
+    "audience": "旅行先を調べている人",
+    "features": [
+      "開いている候補URLの保存",
+      "比較したい項目の手入力",
+      "候補の並列表示"
+    ],
+    "acceptance": [
+      "ページ価格を勝手に確定値として保存しない",
+      "同じ候補の重複を知らせる",
+      "保存した元URLへ戻れる"
+    ],
+    "data": [
+      "TravelCandidate",
+      "ComparisonCriterion",
+      "CandidateMemo"
+    ],
+    "caution": "予約や価格監視は初期範囲にせず、取得は利用者が押した時だけにする。"
+  },
+  {
+    "id": "083",
+    "slug": "walk-bingo",
+    "title": "散歩の発見ビンゴ",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "見つけたい景色や物をカードにして散歩を楽しむ制作アイデア。",
+    "audience": "近所の散歩を楽しむ人",
+    "features": [
+      "お題のビンゴカード",
+      "見つけた記録と写真",
+      "自分で作るお題セット"
+    ],
+    "acceptance": [
+      "同じマスを押しても達成数が増え続けない",
+      "写真なしで達成を記録できる",
+      "カードを作り直しても過去の記録を残せる"
+    ],
+    "data": [
+      "BingoCard",
+      "Discovery",
+      "PromptSet"
+    ],
+    "caution": "危険な場所への誘導や歩行中の連続操作を避けるお題設計にする。"
+  },
+  {
+    "id": "084",
+    "slug": "shared-trip-decisions",
+    "title": "旅の相談ノート",
+    "category": "旅・外出",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "同行者の希望と決まった予定を分けて共有する制作アイデア。",
+    "audience": "友人や家族で旅を計画する人",
+    "features": [
+      "同行者の希望カード",
+      "候補へのリアクション",
+      "確定した予定への移動"
+    ],
+    "acceptance": [
+      "希望と確定予定を別に表示する",
+      "招待されていない人は旅行情報を取得できない",
+      "候補を却下しても理由を残せる"
+    ],
+    "data": [
+      "SharedTrip",
+      "PreferenceCard",
+      "ConfirmedPlan"
+    ],
+    "caution": "パスポート番号や自宅住所など旅の相談に不要な情報は集めない。"
+  },
+  {
+    "id": "085",
+    "slug": "bookmark-spring-cleaning",
+    "title": "ブックマーク棚おろし",
+    "category": "整理・発見",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "保存済みブックマークを見直し、残す理由を付ける制作アイデア。",
+    "audience": "ブックマークが増えた人",
+    "features": [
+      "ブックマークの読取と検索",
+      "フォルダ別の件数表示",
+      "見直し結果のプレビュー"
+    ],
+    "acceptance": [
+      "点検だけでは元のブックマークを変更しない",
+      "同名でURLが違う項目を区別する",
+      "書き出した結果から元URLへ戻れる"
+    ],
+    "data": [
+      "BookmarkEntry",
+      "ReviewDecision",
+      "BookmarkFolder"
+    ],
+    "caution": "変更・削除は別の確認操作に分け、最初はHTMLバックアップを案内する。"
+  },
+  {
+    "id": "086",
+    "slug": "personal-search-index",
+    "title": "自分のメモの横断検索",
+    "category": "整理・発見",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "複数のテキストファイルを端末内で検索する制作アイデア。",
+    "audience": "メモの置き場が分散した人",
+    "features": [
+      "選択したテキストの読み込み",
+      "本文とファイル名の検索",
+      "一致部分の抜粋表示"
+    ],
+    "acceptance": [
+      "日本語の検索語で一致箇所へ移動できる",
+      "同名ファイルをパスで区別する",
+      "読込内容が外部へ送信されない"
+    ],
+    "data": [
+      "IndexedDocument",
+      "SearchEntry",
+      "ImportBatch"
+    ],
+    "caution": "最初は対応形式と読込サイズを限定し、機密ファイルを外部AIへ渡さない。"
+  },
+  {
+    "id": "087",
+    "slug": "browser-tab-focus",
+    "title": "今使うタブの作業棚",
+    "category": "整理・発見",
+    "platform": "extension",
+    "level": "はじめて",
+    "summary": "開いているタブを作業ごとにまとめて戻れるようにする制作アイデア。",
+    "audience": "調べ物でタブが増える人",
+    "features": [
+      "タブのタイトルとURL一覧",
+      "作業セットの保存",
+      "選んだセットを開く"
+    ],
+    "acceptance": [
+      "保存時に元のタブを勝手に閉じない",
+      "同じURLの重複を見つけられる",
+      "大量のタブを一度に開く前に件数を示す"
+    ],
+    "data": [
+      "TabSnapshot",
+      "WorkSet",
+      "SavedTab"
+    ],
+    "caution": "全ページ内容の読取権限を求めず、URLに含まれる秘密値の保存を避ける。"
+  },
+  {
+    "id": "088",
+    "slug": "digital-receipt-folder",
+    "title": "レシートの整理フォルダ",
+    "category": "整理・発見",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "自分のレシート写真に日付と分類を付けて探す制作アイデア。",
+    "audience": "購入記録を整理したい人",
+    "features": [
+      "写真と金額・日付の手入力",
+      "分類別の検索",
+      "選択した明細のCSV出力"
+    ],
+    "acceptance": [
+      "文字認識なしでも登録を完了できる",
+      "合計が空欄の明細を未確認として示す",
+      "写真を削除する前に関連する明細を知らせる"
+    ],
+    "data": [
+      "Receipt",
+      "ReceiptCategory",
+      "Attachment"
+    ],
+    "caution": "税務判断や正式な証憑保存の適合を保証せず、写真の個人情報を保護する。"
+  },
+  {
+    "id": "089",
+    "slug": "browser-video-notes",
+    "title": "視聴メモのサイド棚",
+    "category": "整理・発見",
+    "platform": "extension",
+    "level": "少し挑戦",
+    "summary": "視聴中の動画に時刻付きの自分用メモを残す制作アイデア。",
+    "audience": "講義や解説動画で学ぶ人",
+    "features": [
+      "利用者操作で時刻とURL取得",
+      "短い学習メモ",
+      "動画別のメモ一覧"
+    ],
+    "acceptance": [
+      "時刻付きリンクから該当位置を開ける",
+      "画面構造が変わると取得できない理由を示す",
+      "コメント欄へ自動投稿しない"
+    ],
+    "data": [
+      "VideoBookmark",
+      "TimestampNote",
+      "LearningTag"
+    ],
+    "caution": "動画を無断ダウンロードせず、対応サービスだけに権限を限定する。"
+  },
+  {
+    "id": "090",
+    "slug": "gift-ideas-shelf",
+    "title": "贈り物のアイデア棚",
+    "category": "整理・発見",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "相手への候補と贈った履歴を自分用に整理する制作アイデア。",
+    "audience": "贈り物を考える人",
+    "features": [
+      "相手の呼び名と好みメモ",
+      "候補URLと予算メモ",
+      "贈った品の履歴"
+    ],
+    "acceptance": [
+      "同じ候補を別の相手にも関連付けられる",
+      "候補と贈った履歴を区別する",
+      "誕生日を入れずにも登録できる"
+    ],
+    "data": [
+      "RecipientAlias",
+      "GiftIdea",
+      "GiftHistory"
+    ],
+    "caution": "相手の個人情報は最小限にし、購入や外部送信は自動実行しない。"
+  },
+  {
+    "id": "091",
+    "slug": "browser-page-outline",
+    "title": "長いページの道しるべ",
+    "category": "整理・発見",
+    "platform": "extension",
+    "level": "はじめて",
+    "summary": "長いWebページの見出しをサイドに出して移動する制作アイデア。",
+    "audience": "ドキュメントを読む人",
+    "features": [
+      "見出しのアウトライン",
+      "現在位置の表示",
+      "自分用のしおり"
+    ],
+    "acceptance": [
+      "見出しを押すと該当箇所へ移動する",
+      "見出しのないページでも通常閲覧を妨げない",
+      "動的追加された見出しへ追従できる"
+    ],
+    "data": [
+      "PageOutline",
+      "HeadingAnchor",
+      "ReadingBookmark"
+    ],
+    "caution": "ページ構造を恒久的に変えず、対象ページだけで動く権限設計にする。"
+  },
+  {
+    "id": "092",
+    "slug": "browser-form-draft",
+    "title": "フォーム下書きの控え",
+    "category": "整理・発見",
+    "platform": "extension",
+    "level": "じっくり",
+    "summary": "許可したフォームの入力を端末内で一時保存する制作アイデア。",
+    "audience": "長文フォームをよく入力する人",
+    "features": [
+      "対象ドメインを明示登録",
+      "長文欄だけの下書き保存",
+      "復元前の内容プレビュー"
+    ],
+    "acceptance": [
+      "パスワード・決済欄を保存しない",
+      "別URLや別アカウントへ自動復元しない",
+      "保存期限を過ぎた下書きを表示しない"
+    ],
+    "data": [
+      "AllowedForm",
+      "DraftField",
+      "DraftExpiry"
+    ],
+    "caution": "初期版は自作フォーム限定で試し、共有端末では無効化できるようにする。"
+  },
+  {
+    "id": "093",
+    "slug": "creator-content-calendar",
+    "title": "発信テーマのカレンダー",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "発信するテーマと準備状況を週ごとに見渡す制作アイデア。",
+    "audience": "継続して情報発信する人",
+    "features": [
+      "テーマ候補と対象読者",
+      "予定日と制作状態",
+      "週別カレンダー"
+    ],
+    "acceptance": [
+      "日付を変えてもテーマ本文を保つ",
+      "未定の候補をカレンダー外へ置ける",
+      "投稿済みと予約予定を別に表示する"
+    ],
+    "data": [
+      "ContentIdea",
+      "PublicationPlan",
+      "ProductionState"
+    ],
+    "caution": "SNSへ自動投稿せず、公開済み状態は本人が確認して変更する。"
+  },
+  {
+    "id": "094",
+    "slug": "screen-demo-script",
+    "title": "画面デモの段取り表",
+    "category": "動画・発信",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "操作説明の撮影前に見せる画面と話す要点を並べる制作アイデア。",
+    "audience": "アプリの紹介動画を作る人",
+    "features": [
+      "見せる操作と要点のカード",
+      "必要なサンプルデータのメモ",
+      "撮影用の順次表示"
+    ],
+    "acceptance": [
+      "カード順の変更を撮影表示へ反映する",
+      "公開しない内部メモを出力から外せる",
+      "キーボードで次のカードへ進める"
+    ],
+    "data": [
+      "DemoScript",
+      "DemoStep",
+      "SampleDataNote"
+    ],
+    "caution": "ログイン情報や実在顧客データをデモ素材として使わない。"
+  },
+  {
+    "id": "095",
+    "slug": "small-business-opening-log",
+    "title": "開店と閉店の確認帳",
+    "category": "お店・地域",
+    "platform": "mobile",
+    "level": "はじめて",
+    "summary": "日々の開店・閉店作業を短い確認項目で残す制作アイデア。",
+    "audience": "小規模店舗のスタッフ",
+    "features": [
+      "開店・閉店テンプレート",
+      "日ごとの実施記録",
+      "気付いた不具合のメモ"
+    ],
+    "acceptance": [
+      "日付をまたいでも前日の未完了を確認できる",
+      "テンプレート変更で過去記録を改変しない",
+      "オフラインの入力を再開後も保つ"
+    ],
+    "data": [
+      "RoutineTemplate",
+      "DailyRoutine",
+      "IssueMemo"
+    ],
+    "caution": "防犯や衛生の適合を自動保証せず、店が決めた手順の記録として使う。"
+  },
+  {
+    "id": "096",
+    "slug": "team-glossary",
+    "title": "チームの言葉辞典",
+    "category": "チーム・コミュニティ",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "チーム独自の用語と使う場面を検索できる制作アイデア。",
+    "audience": "専門用語が多いチーム",
+    "features": [
+      "用語と説明・使用例",
+      "別名や略称の登録",
+      "見直し日と担当"
+    ],
+    "acceptance": [
+      "略称から正式名称を検索できる",
+      "同じ表記で異なる意味を分けられる",
+      "説明が古い用語を見直し一覧へ出せる"
+    ],
+    "data": [
+      "GlossaryTerm",
+      "TermAlias",
+      "ReviewOwner"
+    ],
+    "caution": "社内固有情報はアクセス制御した場所へ保存し、公開辞典へ混ぜない。"
+  },
+  {
+    "id": "097",
+    "slug": "browser-markdown-capture",
+    "title": "ページ情報のMarkdownメモ",
+    "category": "仕事・資料",
+    "platform": "extension",
+    "level": "はじめて",
+    "summary": "開いているページのURLと選択文をMarkdownのメモへ整える制作アイデア。",
+    "audience": "調べ物を文書にまとめる人",
+    "features": [
+      "タイトルと出典URLの取得",
+      "選択した部分だけの引用",
+      "Markdownのプレビューとコピー"
+    ],
+    "acceptance": [
+      "未選択時にページ全文を取り込まない",
+      "引用に元URLと記録日が入る",
+      "記号を含むタイトルでもMarkdownが壊れない"
+    ],
+    "data": [
+      "CaptureDraft",
+      "Citation",
+      "SelectedExcerpt"
+    ],
+    "caution": "引用範囲は利用者が確認し、機密ページを初期対象にしない。"
+  },
+  {
+    "id": "098",
+    "slug": "travel-language-pocket",
+    "title": "旅の伝えたいことポケット",
+    "category": "旅・外出",
+    "platform": "mobile",
+    "level": "少し挑戦",
+    "summary": "旅で必要な自分の短いメッセージを大きく表示する制作アイデア。",
+    "audience": "海外旅行で意思を伝えたい人",
+    "features": [
+      "メッセージと自分で確認した訳",
+      "場面別の分類",
+      "相手に見せる大きな文字画面"
+    ],
+    "acceptance": [
+      "訳未確認のカードは区別して表示する",
+      "オフラインでも保存済み文を表示できる",
+      "文字サイズを拡大しても文が切れない"
+    ],
+    "data": [
+      "MessageCard",
+      "SituationTag",
+      "TranslationStatus"
+    ],
+    "caution": "緊急時や医療の正確な通訳を代替すると案内せず、通常の短い表現に絞る。"
+  },
+  {
+    "id": "099",
+    "slug": "project-cost-scenarios",
+    "title": "アプリ費用のシナリオ表",
+    "category": "開発・運用",
+    "platform": "web",
+    "level": "少し挑戦",
+    "summary": "利用人数と保存量の仮定から運営費の考え方を整理する制作アイデア。",
+    "audience": "小さなアプリを企画する人",
+    "features": [
+      "単価と無料枠の手入力",
+      "人数・容量別の計算",
+      "仮定と計算結果の比較"
+    ],
+    "acceptance": [
+      "無料枠を超えた部分だけを計算できる",
+      "通貨が違う費用を無断合計しない",
+      "単価の出典日と仮定を結果に残す"
+    ],
+    "data": [
+      "PricingInput",
+      "UsageScenario",
+      "CostEstimate"
+    ],
+    "caution": "料金は最新公式情報で確認し、見積もりを請求額の保証として扱わない。"
+  },
+  {
+    "id": "100",
+    "slug": "app-store-copy-desk",
+    "title": "ストア紹介文の下書き机",
+    "category": "仕事・資料",
+    "platform": "web",
+    "level": "はじめて",
+    "summary": "実装した機能だけをもとにアプリの紹介文を整理する制作アイデア。",
+    "audience": "アプリの申請準備をする人",
+    "features": [
+      "対象利用者と実装機能の記録",
+      "タイトル・説明の下書き",
+      "文字数と未確認表現の表示"
+    ],
+    "acceptance": [
+      "実装済みと予定機能を区別できる",
+      "欄ごとに文字数を確認できる",
+      "書き出しに未公開の内部メモを含めない"
+    ],
+    "data": [
+      "AppListingDraft",
+      "ImplementedFeature",
+      "CopyField"
+    ],
+    "caution": "審査通過を保証せず、文字数や必須欄は申請時の公式仕様で確かめる。"
+  }
+]

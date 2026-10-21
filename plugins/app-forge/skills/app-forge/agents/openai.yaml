@@ -1,0 +1,4 @@
+interface:
+  display_name: "アプリ開発のすゝめ"
+  short_description: "Web・モバイル・Chrome拡張の企画から開発、テストと公開準備まで伴走"
+  default_prompt: "$app-forge を使って、参考アプリの良さを取り入れた自分のアプリを動く形まで作ってください。"
