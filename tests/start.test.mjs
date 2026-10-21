@@ -46,3 +46,21 @@ test('AI起動失敗時には未実装の資料を残し、失敗を伝える',a
   if(process.platform==='win32')return;
   const base=await mkdtemp(path.join(tmpdir(),'app-forge-fail-'));const bin=path.join(base,'bin');await mkdir(bin);const fake=path.join(bin,'codex');const out=path.join(base,'app');await writeFile(fake,`#!${process.execPath}\nprocess.exit(process.argv[2]==='--version'?0:7);\n`);await chmod(fake,0o755);const r=run(['start','008','--out',out],{env:{...process.env,PATH:bin+path.delimiter+process.env.PATH}});assert.equal(r.status,7);await access(path.join(out,'APP_STATUS.md'));assert.equal(await readFile(path.join(out,'APP_BRIEF.md'),'utf8'),makeBrief(findIdea(ideas,'008')));
 });
+
+test('resume は既存の編集を保持し、別のIDや未準備の場所では起動しない',async()=>{
+  const base=await mkdtemp(path.join(tmpdir(),'app-forge-resume-'));const out=path.join(base,'app');
+  assert.equal(run(['start','006','--prepare-only','--out',out]).status,0);
+  await writeFile(path.join(out,'APP_BRIEF.md'),'EDITED BY VIEWER');
+  assert.equal(run(['resume','006','--prepare-only','--out',out]).status,0);
+  assert.equal(await readFile(path.join(out,'APP_BRIEF.md'),'utf8'),'EDITED BY VIEWER');
+  assert.notEqual(run(['resume','007','--prepare-only','--out',out]).status,0);
+  assert.notEqual(run(['resume','006','--prepare-only','--out',path.join(base,'missing')]).status,0);
+});
+
+test('Codexの非対話実行は通常のworkspace-writeで実行し、失敗時も資料を保持する',async()=>{
+  if(process.platform==='win32')return;
+  const base=await mkdtemp(path.join(tmpdir(),'app-forge-exec-')),bin=path.join(base,'bin'),out=path.join(base,'app'),log=path.join(base,'args.json');await mkdir(bin);
+  const fake=path.join(bin,'codex');await writeFile(fake,`#!${process.execPath}\nimport fs from 'node:fs';if(process.argv[2]==='--version')process.exit(0);fs.writeFileSync(process.env.APP_FORGE_TEST_LOG,JSON.stringify(process.argv.slice(2)));\n`);await chmod(fake,0o755);
+  const r=run(['start','006','--exec','--out',out],{env:{...process.env,PATH:bin+path.delimiter+process.env.PATH,APP_FORGE_TEST_LOG:log}});assert.equal(r.status,0,r.stderr);
+  const args=JSON.parse(await readFile(log,'utf8'));assert.deepEqual(args.slice(0,4),['exec','--skip-git-repo-check','--sandbox','workspace-write']);assert.equal(args.length,5);assert.ok(args[4].includes('APP_BRIEF.md'));
+});

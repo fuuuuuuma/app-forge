@@ -35,20 +35,32 @@ claude plugin install app-forge@app-forge
 サイトの「このアプリを作る」から、機能・合格条件を確認し、起動コマンドをコピーします。手元のターミナルで実行すると新しいフォルダ、`APP_BRIEF.md`、スキルを用意し、AIのCLIを起動します。プラグインを別途入れていなくても、この経路にはスキルが同梱されます。
 
 ```sh
-npx --yes --package github:fuuuuuuma/app-forge#v0.1.0 app-forge start 004 --agent codex
+npx --yes --package github:fuuuuuuma/app-forge#v0.2.0 app-forge start 004 --agent codex
 ```
 
-Claude Codeを使うなら `--agent claude`。Node.js 20以上・npm・Git・選んだAIのCLIとログインが必要です。初回はGitHubからパッケージを取得します。AIの利用は本人のプランに従います。CLIは通常の承認設定を維持し、公開・課金を自動承認しません。
+Claude Codeを使うなら `--agent claude`。Codexで端末の対話UIを使わず実行するには `--exec`。このモードも `workspace-write` の範囲で動き、公開や課金の許可を自動化しません。Node.js 20以上・npm・Git・選んだAIのCLIとログインが必要です。初回はGitHubからパッケージを取得します。AIの利用は本人のプランに従います。CLIは通常の承認設定を維持し、公開・課金を自動承認しません。
 
-初期の作業場所は現在のフォルダの `apps/<アイデアのslug>`。既存のフォルダは上書きしません。別の場所を使うには `--out ./my-new-app`。資料だけ作るには `--prepare-only`、何も変更せず指示を確認するには `--dry-run`。一覧は `app-forge list`。
+初期の作業場所は現在のフォルダの `apps/<アイデアのslug>`。既存のフォルダは上書きしません。別の場所を使うには `--out ./my-new-app`。資料だけ作るには `--prepare-only`、何も変更せず指示を確認するには `--dry-run`。一覧は `app-forge list`。中断後は `app-forge resume 004`（または `--out` で同じ場所を指定）で、指示書や作成済みのアプリを上書きせず再開できます。
 
 ```sh
-npx --yes --package github:fuuuuuuma/app-forge#v0.1.0 app-forge start 004 --prepare-only --out ./my-new-app
+npx --yes --package github:fuuuuuuma/app-forge#v0.2.0 app-forge start 004 --prepare-only --out ./my-new-app
 ```
 
 WebページがPCを勝手に操作することはありません。サイトを開く→案を選ぶ→コマンドを本人が実行する、という流れです。CLIなしの場合は、スキル導入後に「チャット用の指示をコピー」を使えます。
 
 ランチャーの動作確認環境はmacOS・Node.js 24。Linux・Windowsの実機起動は未確認です。Windowsでは環境によって`.cmd`の起動方法が異なるため、WSL、指示書ダウンロード、または `--prepare-only` から始めてください。スマホからサイトで案を選び、PCで開発を続けることもできます。
+
+## サイトの操作
+
+白ベースのLiquid Glass UIを使うモバイル向けWebアプリです。検索の補完候補は矢印キーとEnterでも選べます。アイデアを開くとBottom Sheetに詳細と制作手順を表示。カードを左にスワイプすると保存・制作ボタンが出ます。スワイプの代わりに「•••」も使えます。
+
+上端を下に引くとカタログを再取得し、全画面スケルトンを表示します。ヘッダーの更新ボタンからも同じ操作ができます。保存・コピー・失敗はToastで伝え、保存の変更は取り消せます。OSの「動きを減らす」設定にも対応します。お気に入りはそのブラウザに保存します。
+
+## 新しい環境での検証
+
+Node.js・npm・Git・Codex CLIとログインを前提に、新しいCodex設定領域と空の作業フォルダで、公開版の2行導入→100件一覧→006の選択→実際のCodexで動画チャプターアプリを生成する経路を試験しました。既存のユーザー設定、MCP、作者のスキルや記憶は引き継いでいません。検証には本人の既存ログインを使用しています。
+
+実行制限でlocalhostサーバーが `EPERM` になる場合は、通常のターミナルで生成アプリの起動コマンドを実行してください。環境の制限を理由にアプリを作り直す必要はありません。100案すべて、Windows/Linux実機、モバイルストア申請までを試験したものではありません。
 
 ## どこまで手伝う？
 

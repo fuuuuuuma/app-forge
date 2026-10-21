@@ -12,10 +12,10 @@ export function makeBrief(idea) {
 }
 
 export function makePrompt(idea, skillPath = '.agents/skills/app-forge/SKILL.md') {
-  return `同梱のスキル ${skillPath} を読んでください。\nAPP_BRIEF.md の「${idea.title}」を開発してください。企画だけで止めず、実装・起動・主要操作の確認まで進めてください。参考アプリの素材・名前は独自にしてください。ユーザーの既存指示と権限を尊重し、公開・外部アップロード・課金・本番の変更の許可は操作ごとに確認してください。未確認事項と再開手順をAPP_STATUS.mdに残してください。`;
+  return `同梱のスキル ${skillPath} を読んでください。\nAPP_BRIEF.md の「${idea.title}」を開発してください。企画だけで止めず、実装・起動・主要操作の確認まで進めてください。参考アプリの素材・名前は独自にしてください。ユーザーの既存指示と権限を尊重し、公開・外部アップロード・課金・本番の変更は対象と費用の明示許可に含まれる範囲で進め、未許可の操作だけ確認してください。未確認事項と再開手順をAPP_STATUS.mdに残してください。`;
 }
 
 export function launchCommand(idea, agent = 'codex') {
   if (!['codex', 'claude'].includes(agent)) throw new Error('対応エージェントはcodexかclaudeです。');
-  return `npx --yes --package github:fuuuuuuma/app-forge#v0.1.0 app-forge start ${idea.id} --agent ${agent}`;
+  return `npx --yes --package github:fuuuuuuma/app-forge#v0.2.0 app-forge start ${idea.id} --agent ${agent}`;
 }
